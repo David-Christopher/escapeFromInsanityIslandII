@@ -12,14 +12,14 @@ import java.util.Objects;
  *
  * @author andrenell
  */
-public class Character implements Serializable {
+public class GameCharacter implements Serializable {
     
     //classs instance variable
     private String name;
     private String description;
     private double coordinates;
 
-    public Character() {
+    public GameCharacter() {
     }
 
     
@@ -68,7 +68,7 @@ public class Character implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Character other = (Character) obj;
+        final GameCharacter other = (GameCharacter) obj;
         if (Double.doubleToLongBits(this.coordinates) != Double.doubleToLongBits(other.coordinates)) {
             return false;
         }

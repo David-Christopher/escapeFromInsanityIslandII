@@ -5,12 +5,19 @@
  */
 package escapefrominsanityisland;
 
+import byui.cit260.escapeFromInsanityIsland.model.Boat;
+import byui.cit260.escapeFromInsanityIsland.model.Game;
+import byui.cit260.escapeFromInsanityIsland.model.GameCharacter;
+import byui.cit260.escapeFromInsanityIsland.model.HealthSyringe;
 import byui.cit260.escapeFromInsanityIsland.model.Location;
+import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import byui.cit260.escapeFromInsanityIsland.model.ResourceTypeScene;
 import byui.cit260.escapeFromInsanityIsland.model.Scene;
+import byui.cit260.escapeFromInsanityIsland.model.Tool;
 import byui.cit260.escapeFromInsanityIsland.model.TrackSign;
 import byui.cit260.escapeFromInsanityIsland.model.WarehouseTypeScene;
+import byui.cit260.escapeFromInsanityIsland.model.Weapon;
 
 /**
  *
@@ -133,14 +140,14 @@ public class EscapeFromInsanityIsland {
         System.out.println(toolInfo);
 
         //Weapon Class
-        Weapon WeaponOne = new Weapon();
+        Weapon weaponOne = new Weapon();
         
         //To Test Tool Class
-        WeaponOne.setName("Spear");
-        WeaponOne.setDescription("Impail wild pigs");
+        weaponOne.setName("Spear");
+        weaponOne.setDescription("Impail wild pigs");
         
-        String WeaponInfo = WeaponOne.toString();
-        System.out.println(WeaponInfo);
+        String weaponInfo = weaponOne.toString();
+        System.out.println(weaponInfo);
 
         //HealthSyringe
         HealthSyringe HealthSyringeOne = new HealthSyringe();
