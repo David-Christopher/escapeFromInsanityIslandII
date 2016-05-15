@@ -7,42 +7,39 @@ package byui.cit260.escapeFromInsanityIsland.model;
 
 import java.io.Serializable;
 import java.util.Objects;
-
 /**
  *
  * @author Christopher
  */
-public class Player implements Serializable{
-    //class instance variables
-    private String name;
-    private double bestTime;
+public class WarehouseTypeScene implements Serializable {
+     // Class instance variables
+    private String noOfItems;
+    private String attribute;
 
-    public Player() {
+    public WarehouseTypeScene() {
     }
     
-    
-    
-    public String getName() {
-        return name;
+    public String getNoOfItems() {
+        return noOfItems;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNoOfItems(String noOfItems) {
+        this.noOfItems = noOfItems;
     }
 
-    public double getBestTime() {
-        return bestTime;
+    public String getAttribute() {
+        return attribute;
     }
 
-    public void setBestTime(double bestTime) {
-        this.bestTime = bestTime;
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.name);
-        hash = 17 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+        hash = 67 * hash + Objects.hashCode(this.noOfItems);
+        hash = 67 * hash + Objects.hashCode(this.attribute);
         return hash;
     }
 
@@ -57,11 +54,11 @@ public class Player implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Player other = (Player) obj;
-        if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
+        final WarehouseTypeScene other = (WarehouseTypeScene) obj;
+        if (!Objects.equals(this.noOfItems, other.noOfItems)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.attribute, other.attribute)) {
             return false;
         }
         return true;
@@ -69,8 +66,9 @@ public class Player implements Serializable{
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
+        return "WarehouseTypeScene{" + "noOfItems=" + noOfItems + ", attribute=" + attribute + '}';
     }
-        
+
+    
     
 }
