@@ -17,7 +17,7 @@ public class BoatControl {
         if(radius < 4 || radius > 5) {
             return -1;
         }
-        double treeRollers = 198 / (Math.pow(radius, 2)) * .333;
+        double treeRollers = 198 / (radius * 2) * .333;
             return treeRollers;
     }
 }
