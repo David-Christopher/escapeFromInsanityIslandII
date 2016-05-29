@@ -19,5 +19,5 @@ public class BoatControl {
         }
         double treeRollers = 198 / (radius * 2) * .333;
             return treeRollers;
-    }
+    }    
 }
