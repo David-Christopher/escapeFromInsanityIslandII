@@ -5,6 +5,7 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
+import byui.cit260.escapeFromInsanityIsland.control.GameControl;
 import java.util.Scanner;
 
 /**
@@ -22,9 +23,9 @@ public class MainMenuView {
                   + "\n| Main Menu                                    |"
                   + "\n------------------------------------------------"
                   + "\nN - Start New Game"    
-                  + "\nG - Get and Start Saved Game" 
-                  + "\nH - Get help with how to play the Game"
-                  + "\nS - Save the Game"
+                  + "\nG - Continue Saved Game" 
+                  + "\nH - Get Help With How to Play"
+                  + "\nS - Save Game"
                   + "\nQ - Quit"                
                   + "\n------------------------------------------------";
     }
@@ -95,8 +96,16 @@ public class MainMenuView {
     
     private void startNewGame() {
         System.out.println("\n*** startNewGame() function called ***");
+        /* IN PROGRESS PAGE 46-48 CURRENT ERROR ON GameControl.createNewGame line
+            //Generating a new game
+        GameControl.createNewGame(EscapeFromInsanityIsland.getPlayer());
+        
+            //Get and display game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
+        */
     }
-
+        
     private void startExistingGame() {
         System.out.println("\n*** startExistingGame() function called ***");
     }
