@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class MainMenuView {
     
     private String menu;
-    private String promptMessage;
+    private String promptMessage = "Enter your selection below";
     
     public MainMenuView() {
         this.menu = "\n"
@@ -29,9 +29,10 @@ public class MainMenuView {
                   + "\n------------------------------------------------";
     }
 
-    void displayMainMenuView() {
+    public void displayMainMenuView() {
         boolean done = false; // set flag to not done
         do {
+            System.out.println(menu);
             //prompt for and get the players name
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q")) // user wants to quit

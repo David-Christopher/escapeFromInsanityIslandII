@@ -25,7 +25,7 @@ public class GameControl {
         
         EscapeFromInsanityIsland.setPlayer(player); // save the player
         
-        return new Player();
+        return player;
     }
     
 }
