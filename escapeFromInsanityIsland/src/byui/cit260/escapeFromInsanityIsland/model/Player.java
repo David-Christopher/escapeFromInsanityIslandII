@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class Player implements Serializable{
     //class instance variables
-    private String name;
+    private String playersName;
     private double bestTime;
 
     public Player() {
@@ -22,12 +22,12 @@ public class Player implements Serializable{
     
     
     
-    public String getName() {
-        return name;
+    public String getPlayersName() {
+        return playersName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPlayersName(String playersName) {
+        this.playersName = playersName;
     }
 
     public double getBestTime() {
@@ -41,7 +41,7 @@ public class Player implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.name);
+        hash = 17 * hash + Objects.hashCode(this.playersName);
         hash = 17 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
         return hash;
     }
@@ -61,7 +61,7 @@ public class Player implements Serializable{
         if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.playersName, other.playersName)) {
             return false;
         }
         return true;
@@ -69,7 +69,7 @@ public class Player implements Serializable{
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
+        return "Player{" + "name=" + playersName + ", bestTime=" + bestTime + '}';
     }
         
     

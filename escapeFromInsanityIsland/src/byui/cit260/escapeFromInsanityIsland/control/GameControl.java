@@ -5,10 +5,27 @@
  */
 package byui.cit260.escapeFromInsanityIsland.control;
 
+import byui.cit260.escapeFromInsanityIsland.model.Player;
+import escapefrominsanityisland.EscapeFromInsanityIsland;
+
 /**
  *
  * @author andrenell
  */
 public class GameControl {
+
+    public static Player createPlayer(String playersName) {
+ 
+        if (playersName == null) {
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setPlayersName(playersName);
+        
+        EscapeFromInsanityIsland.setPlayer(player); // save the player
+        
+        return new Player();
+    }
     
 }
