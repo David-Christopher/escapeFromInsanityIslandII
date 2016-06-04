@@ -107,22 +107,27 @@ public class GameHelpMenuView {
     }
         
     private void howToMove(){
-        System.out.println("\n*** howToMove() function called ***");
+           HelpMenuItems howToMove = new HelpMenuItems();
+        howToMove.displayHowToMove();  
     }
 
     private void toolsAvailable() {
-        System.out.println("\n*** toolsAvailable() function called ***");
+           HelpMenuItems toolsAvailable = new HelpMenuItems();
+        toolsAvailable.displayToolsAvailable();
     }
 
     private void constructingTools() {
-        System.out.println("\n*** constructingTools() function called ***");  
+           HelpMenuItems constructingTools = new HelpMenuItems();
+        constructingTools.displayConstructingTools();
     }
     
     private void viewMap() {
-        System.out.println("\n*** viewMap() function called ***");
+            HelpMenuItems viewMap = new HelpMenuItems();
+        viewMap.displayViewMap();
     }
 
     private void avoidingTrapsBeasts() {
-        System.out.println("\n*** avoidingTrapsBeasts() function called ***");  
+            HelpMenuItems avoidingTrapsBeasts = new HelpMenuItems();
+        avoidingTrapsBeasts.displayAvoidingTrapsBeasts();
     }
 }
