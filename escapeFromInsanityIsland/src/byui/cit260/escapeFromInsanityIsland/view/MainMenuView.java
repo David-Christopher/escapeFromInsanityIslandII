@@ -6,6 +6,7 @@
 package byui.cit260.escapeFromInsanityIsland.view;
 
 import byui.cit260.escapeFromInsanityIsland.control.GameControl;
+import escapefrominsanityisland.EscapeFromInsanityIsland;
 import java.util.Scanner;
 
 /**
@@ -95,15 +96,15 @@ public class MainMenuView {
     }
     
     private void startNewGame() {
-        System.out.println("\n*** startNewGame() function called ***");
-        /* IN PROGRESS PAGE 46-48 CURRENT ERROR ON GameControl.createNewGame line
+        /*System.out.println("\n*** startNewGame() function called ***");*/
+       
             //Generating a new game
         GameControl.createNewGame(EscapeFromInsanityIsland.getPlayer());
         
             //Get and display game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayMenu();
-        */
+        
     }
         
     private void startExistingGame() {
@@ -115,7 +116,11 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("\n*** displayHelpMenu() function called ***");
+        //System.out.println("\n*** displayHelpMenu() function called ***");
+             //Get and display help menu
+        GameHelpMenuView helpMenu = new GameHelpMenuView();
+        helpMenu.displayHelpMenu();
+        
     }
 
 }
