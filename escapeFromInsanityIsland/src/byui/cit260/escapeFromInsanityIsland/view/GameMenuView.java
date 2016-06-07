@@ -68,5 +68,77 @@ public class GameMenuView {
         return value; // return the value entered
                         
     }
+    private boolean doAction(String choice) {
+        choice.toUpperCase(); // convert choice to upper case
+        
+        switch (choice) {
+            case "V": // View the map
+                this.viewMap();
+                break;   
+            case "I": // View inventory
+                this.viewInventory();
+                break;
+            case "S": // Craft health syringes
+                this.craftHealthSyringe();
+                break;
+            case "T": // Construct tools
+                this.constructTools();
+                break;
+            case "W": // Construct weapons
+                this.constructWeapon();
+                break;
+            case "U": // Use tool/weapon/syringe
+                this.useToolWeaponSyringe();
+                break;
+            case "B": // Construct the boat
+                this.constructBoat();
+                break;
+            case "M": // Move to another location
+                this.moveToLocation();
+                break;
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }
+        return false; 
+    }
+    
+    private void viewMap() {
+           GameMenuItems viewMap = new GameMenuItems();
+        viewMap.displayViewMap();     
+    }
+        
+    private void viewInventory(){
+           GameMenuItems viewInventory = new GameMenuItems();
+        viewInventory.displayViewInventory();  
+    }
 
+    private void craftHealthSyringe() {
+           GameMenuItems craftHealthSyringe = new GameMenuItems();
+        craftHealthSyringe.displayCraftHealthSyringe();
+    }
+
+    private void constructTools() {
+           GameMenuItems constructTools = new GameMenuItems();
+        constructTools.displayConstructTools();
+    }
+    
+    private void constructWeapon() {
+            GameMenuItems constructWeapon = new GameMenuItems();
+        constructWeapon.displayConstructWeapon();
+    }
+
+    private void useToolWeaponSyringe() {
+            GameMenuItems useToolWeaponSyringe = new GameMenuItems();
+        useToolWeaponSyringe.displayUseToolWeaponSyringe();
+    }
+    private void constructBoat() {
+            GameMenuItems constructBoat = new GameMenuItems();
+        constructBoat.displayConstructBoat();
+    }
+    private void moveToLocation() {
+            GameMenuItems moveToLocation = new GameMenuItems();
+        moveToLocation.displayMoveToLocation();
+    }
 }
+
