@@ -76,22 +76,22 @@ public class GameHelpMenuView {
         choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
-            case "G": // create and start a new game
+            case "G": // See goal of game
                 this.seeGoal();
                 break;   
-            case "M": // get and start an existing game
+            case "M": // Get help on how to move
                 this.howToMove();
                 break;
-            case "T": // display help menu
+            case "T": // See what tools are available
                 this.toolsAvailable();
                 break;
-            case "C": // save the game
+            case "C": // Get help on how to construct tools
                 this.constructingTools();
                 break;
-            case "V": // display help menu
+            case "V": // See how to use map
                 this.viewMap();
                 break;
-            case "A": // save the game
+            case "A": // Learn about traps and beasts
                 this.avoidingTrapsBeasts();
                 break;
             default:
