@@ -103,7 +103,7 @@ public class MainMenuView {
         
             //Get and display game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.displayGameMenu();
         
     }
         

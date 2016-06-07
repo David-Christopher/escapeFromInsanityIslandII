@@ -104,41 +104,41 @@ public class GameMenuView {
     }
     
     private void viewMap() {
-           GameMenuItems viewMap = new GameMenuItems();
+           ViewMapView viewMap = new ViewMapView();
         viewMap.displayViewMap();     
     }
         
     private void viewInventory(){
-           GameMenuItems viewInventory = new GameMenuItems();
+           ViewInventoryView viewInventory = new ViewInventoryView();
         viewInventory.displayViewInventory();  
     }
 
     private void craftHealthSyringe() {
-           GameMenuItems craftHealthSyringe = new GameMenuItems();
-        craftHealthSyringe.displayCraftHealthSyringe();
+           CraftHealthSyringeView craftHealthSyringe = new CraftHealthSyringeView();
+        craftHealthSyringe.displayCraftHealthSyringeView();
     }
 
     private void constructTools() {
-           GameMenuItems constructTools = new GameMenuItems();
-        constructTools.displayConstructTools();
+           ConstructToolsView constructTools = new ConstructToolsView();
+        constructTools.displayConstructToolsView();
     }
     
     private void constructWeapon() {
-            GameMenuItems constructWeapon = new GameMenuItems();
-        constructWeapon.displayConstructWeapon();
+            ConstructWeaponView constructWeapon = new ConstructWeaponView();
+        constructWeapon.displayConstructWeaponView();
     }
 
     private void useToolWeaponSyringe() {
-            GameMenuItems useToolWeaponSyringe = new GameMenuItems();
-        useToolWeaponSyringe.displayUseToolWeaponSyringe();
+            UseToolWeaponSyringeView useToolWeaponSyringe = new UseToolWeaponSyringeView();
+        useToolWeaponSyringe.displayUseToolWeaponSyringeView();
     }
     private void constructBoat() {
-            GameMenuItems constructBoat = new GameMenuItems();
-        constructBoat.displayConstructBoat();
+            ConstructBoatView constructBoat = new ConstructBoatView();
+        constructBoat.displayConstructBoatView();
     }
     private void moveToLocation() {
-            GameMenuItems moveToLocation = new GameMenuItems();
-        moveToLocation.displayMoveToLocation();
+            MoveToLocationView moveToLocation = new MoveToLocationView();
+        moveToLocation.displayMoveToLocationView();
     }
 }
 

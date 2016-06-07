@@ -5,7 +5,6 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
-
 /**
  *
  * @author Christopher
