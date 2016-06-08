@@ -5,26 +5,33 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 /*
  *
  * @author Christopher
  */
 public class ViewInventoryView {
+    public void displayViewInventoryView() {
+System.out.println("\n*** displayViewInventory() function called ***");   
 
+//Incomplete test code for possible future use. 
+
+/*public class ViewInventoryView {
+    
+    
     private static Object pocketKnife;
     private static Object stick;
     private static Object coconut;
     public static void displayViewInventory() {
-        //System.out.println("\n*** displayViewInventory() function called ***");
+        
         ArrayList Items = new ArrayList ();
         //add items to arraylist
         Items.add("pocketKnife");
         Items.add("stick");
         Items.add("coconut");
         
-        System.out.println("Here are your available items: " + Items.size() + ".";
+        System.out.println("Here are your available items: " + Items.size() + ".";*/
                           
         
     }

@@ -110,7 +110,7 @@ public class GameMenuView {
         
     private void viewInventory(){
            ViewInventoryView viewInventory = new ViewInventoryView();
-        viewInventory.displayViewInventory();  
+        viewInventory.displayViewInventoryView();  
     }
 
     private void craftHealthSyringe() {
