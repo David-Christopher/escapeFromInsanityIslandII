@@ -28,4 +28,3 @@ public class GameControl {
         return player;
     }
     
-}
