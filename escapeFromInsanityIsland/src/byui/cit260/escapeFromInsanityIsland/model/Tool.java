@@ -14,8 +14,8 @@ import java.util.Objects;
  */
 public class Tool implements Serializable {
     
-    private String name;
-    private String description;
+    String name;
+    String description;
 
     public Tool() {
     }

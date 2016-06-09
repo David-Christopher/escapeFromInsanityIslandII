@@ -5,6 +5,8 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
+import byui.cit260.escapeFromInsanityIsland.control.GameControl;
+import escapefrominsanityisland.EscapeFromInsanityIsland;
 import java.util.Scanner;
 
 /**
@@ -22,9 +24,9 @@ public class MainMenuView {
                   + "\n| Main Menu                                    |"
                   + "\n------------------------------------------------"
                   + "\nN - Start New Game"    
-                  + "\nG - Get and Start Saved Game" 
-                  + "\nH - Get help with how to play the Game"
-                  + "\nS - Save the Game"
+                  + "\nG - Continue Saved Game" 
+                  + "\nH - Get Help With How to Play"
+                  + "\nS - Save Game"
                   + "\nQ - Quit"                
                   + "\n------------------------------------------------";
     }
@@ -94,9 +96,17 @@ public class MainMenuView {
     }
     
     private void startNewGame() {
-        System.out.println("\n*** startNewGame() function called ***");
+        /*System.out.println("\n*** startNewGame() function called ***");*/
+       
+            //Generating a new game
+        GameControl.createNewGame(EscapeFromInsanityIsland.getPlayer());
+        
+            //Get and display game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayGameMenu();
+        
     }
-
+        
     private void startExistingGame() {
         System.out.println("\n*** startExistingGame() function called ***");
     }
@@ -106,7 +116,11 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("\n*** displayHelpMenu() function called ***");
+        //System.out.println("\n*** displayHelpMenu() function called ***");
+             //Get and display help menu
+        GameHelpMenuView helpMenu = new GameHelpMenuView();
+        helpMenu.displayHelpMenu();
+        
     }
 
 }
