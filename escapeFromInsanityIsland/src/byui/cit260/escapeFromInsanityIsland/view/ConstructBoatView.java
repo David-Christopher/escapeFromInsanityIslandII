@@ -10,7 +10,15 @@ package byui.cit260.escapeFromInsanityIsland.view;
  * @author Christopher
  */
 public class ConstructBoatView {
-    public void displayConstructBoatView() {
-    System.out.println("\n*** displayConstructBoat() function called ***");
+    
+    private String message;
+    public void ConstructBoatView() {
+        this.message = ("\n"
+                "\n**************************************************************"
+                + "\n| Construct Your Raft"
+                "\n**************************************************************"
+                );
     }
+    
+    public boolean doAction()
 }

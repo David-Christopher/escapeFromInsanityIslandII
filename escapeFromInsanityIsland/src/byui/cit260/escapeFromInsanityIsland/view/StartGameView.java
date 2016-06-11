@@ -5,8 +5,7 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
-import byui.cit260.escapeFromInsanityIsland.control.GameControl;
-import escapefrominsanityisland.EscapeFromInsanityIsland;
+
 import java.util.Scanner;
 
 /**
@@ -14,62 +13,42 @@ import java.util.Scanner;
  * @author andrenell
  */
 public class StartGameView {
-   
-    //create a new game
-    int value = GameControl.startNewGame(EscapeFromInsanityIsland.getPlayer());
-    if (value < 0)
-    private String promptMessage;
-    private String startGameMenuChoices;
-{
-        System.out.println("Error - Failed to create a new game");
-    } else {
-        // display the banner when view created
-        this.displayStartGameBanner();
     
-    }
-    
-    public void displayStartGameBanner() {
-
-        System.out.println(
-                "\n****************************************************"
-              + "\n* How are you feeling? Depending on how you are    *"
-              + "\n* feeling, you will receive an inventory item      *"
-              + "\n* to store for use later in the game.              *"
-              + "\n****************************************************"
-              );
-        this.promptMessage = "\nPlease select an option: ";
-        // display the banner when view created
-        this.startGameBannerChoices();
-
-        }        
-   
+    private String menu;
+    private String promptMessage = "Enter your selection below";
+       
     public StartGameView() {
-        this.startGameMenuChoices = "\n"
-                  + "\n------------------------------------------------"
-                  + "\n| How are you feeling                          |"
-                  + "\n------------------------------------------------"
-                  + "\nC - Confused"
-                  + "\nA - Angry" 
-                  + "\nW - Worried"
-                  + "\nH - Happy"
-                  + "\nQ - Quit The Game"
-                  + "\n------------------------------------------------";
+
+    this.menu=
+            "\n****************************************************"
+          + "\n* How are you feeling? Depending on how you are    *"
+          + "\n* feeling, you will receive an inventory item.     *"
+          + "\n*                                                  *"
+          + "\n* I am feeling:                                    *"
+          + "\n*                                                  *"
+          + "\n* C - Confused                                     *"
+          + "\n* A - Angry                                        *"
+          + "\n* W - Worried                                      *"
+          + "\n* H - Happy                                        *"
+          + "\n*                                                  *"
+          + "\n* Q - Quit The Game                                *"
+          + "\n****************************************************";
     }
-    public void displayStartGameMenu() {
+    public void displayStartGameView() {
         boolean done = false; // set flag to not done
         do {
-            System.out.println(startGameMenuChoices);
-            //prompt for and get the selected option
-            String startGameMenuChoice = this.getStartGameMenuChoice();
-            if (startGameMenuChoice.toUpperCase().equals("Q")) // user wants to quit
-                return; // Take them back a screen
+            System.out.println(menu);
+            //prompt for and get the players name
+            String menuOption = this.getInput();
+            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
+                return; // exit the game
             
             // do the requested action and display the next view
-            done = this.doAction(startGameMenuChoice);
+            done = this.doAction(menuOption);
             
         } while (!done);
     }
-    private String getGameMenuChoice() {
+    private String getInput() {
         
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; // value to be returned
@@ -91,22 +70,22 @@ public class StartGameView {
         }
         return value; // return the value entered
                         
-    }
-    private boolean doAction(String choice) {
-        choice.toUpperCase(); // convert choice to upper case
+    }    
+    private boolean doAction(String menuOption) {
+        menuOption.toUpperCase(); // convert choice to upper case
         
-        switch (choice) {
-            case "C": // Confused Selection
-                this.confusedSelection();
+        switch (menuOption) {
+            case "C": // create and start a new game
+                this.confused();
                 break;   
-            case "A": // Angry Selection
-                this.angrySelection();
+            case "A": // get and start an existing game
+                this.angry();
                 break;
-            case "W": // Worried Selection
-                this.worriedSelection();
+            case "W": // display help menu
+                this.worried();
                 break;
-            case "H": // Happy Selection
-                this.happySelection();
+            case "H": // save the game
+                this.happy();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -114,32 +93,24 @@ public class StartGameView {
         }
         return false; 
     }
-    
 
-    private void startGameBannerChoices() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void confused() {
+        System.out.println("\n*** confused() function called ***");
     }
 
-    private String getStartGameMenuChoice() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void angry() {
+        System.out.println("\n*** angry() function called ***");
     }
 
-    private void confusedSelection() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void worried() {
+        System.out.println("\n*** worried() function called ***");
     }
 
-    private void worriedSelection() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void happy() {
+        System.out.println("\n*** happy() function called ***");
     }
 
-    private void happySelection() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void quit() {
+        System.out.println("\n*** quit() function called ***");
     }
-
-    private void angrySelection() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-    
 }

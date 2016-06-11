@@ -20,6 +20,7 @@ import byui.cit260.escapeFromInsanityIsland.model.WarehouseTypeScene;
 import byui.cit260.escapeFromInsanityIsland.model.Weapon;
 import byui.cit260.escapeFromInsanityIsland.model.Items;
 import byui.cit260.escapeFromInsanityIsland.view.StartProgramView;
+import byui.cit260.escapeFromInsanityIsland.view.StartGameView;
 
 /**
  *
