@@ -16,7 +16,8 @@ public class Player implements Serializable{
     //class instance variables
     private String playersName;
     private double bestTime;
-
+    
+   
     public Player() {
     }
     
@@ -72,5 +73,11 @@ public class Player implements Serializable{
         return "Player{" + "name=" + playersName + ", bestTime=" + bestTime + '}';
     }
         
-    
+    public void playerStats(){
+        //Player variables
+        int health = 100;
+        int attackDamage = 75; //Based on ONE weapon for now. 
+        int armor = 10; //Based on a temp armor value for now. 
+
+    }
 }

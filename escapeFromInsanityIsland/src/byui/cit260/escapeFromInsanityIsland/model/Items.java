@@ -17,6 +17,7 @@ public class Items implements Serializable {
     
     private String name;
     private String description;
+    
 
     public Items() {
     }
@@ -72,7 +73,13 @@ public class Items implements Serializable {
     public String toString() {
         return "Tool{" + "name=" + name + ", description=" + description + '}';
     }
-        
-}
+    
+    public void healthSyringeStats (){
+        //Item variable
+        int numberHealthSyringes = 5;
+        int healthSyringesHealAmount = 50;
+        int healthSyringesDropChance = 20; //20 percent chance  
 
+    }
+}
 

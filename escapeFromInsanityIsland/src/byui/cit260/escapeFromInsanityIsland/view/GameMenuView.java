@@ -21,6 +21,7 @@ public class GameMenuView {
                   + "\n------------------------------------------------"
                   + "\n| Game Menu                                    |"
                   + "\n------------------------------------------------"
+                  + "\nA - Attack Beast"
                   + "\nV - View Map"
                   + "\nI - View Inventory" 
                   + "\nS - Craft Health Syringe"
@@ -72,6 +73,9 @@ public class GameMenuView {
         choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
+            case "A": // Attack beast; not a permanent menu item.
+                this.attackBeast();
+                break;             
             case "V": // View the map
                 this.viewMap();
                 break;   
@@ -101,6 +105,11 @@ public class GameMenuView {
                 break;
         }
         return false; 
+    }
+    
+    private void attackBeast() {
+           AttackBeastView attackBeast = new AttackBeastView();
+        attackBeast.displayAttackBeast();     
     }
     
     private void viewMap() {
