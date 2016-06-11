@@ -133,8 +133,9 @@ public class GameMenuView {
         useToolWeaponSyringe.displayUseToolWeaponSyringeView();
     }
     private void constructBoat() {
-            ConstructBoatView constructBoat = new ConstructBoatView();
+    /*        ConstructBoatView constructBoat = new ConstructBoatView();
         constructBoat.displayConstructBoatView();
+    */
     }
     private void moveToLocation() {
             MoveToLocationView moveToLocation = new MoveToLocationView();

@@ -24,7 +24,7 @@ public class BoatControlTest {
     public void testCalcTreesToMoveBoat() {
         System.out.println("calcTreesToMoveBoat");
         double length = 180.0;
-        double radius = 5.0;
+        double radius = 4.5;
         BoatControl instance = new BoatControl();
         double expResult = 6.593400000000001;
         double result = instance.calcTreesToMoveBoat(length, radius);

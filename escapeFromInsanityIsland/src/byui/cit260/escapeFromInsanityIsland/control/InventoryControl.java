@@ -10,6 +10,7 @@ package byui.cit260.escapeFromInsanityIsland.control;
  * @author Christopher and Andre
  */
 public class InventoryControl {
+    
     public double calcVolumeOfBarrel(double height, double radius) {
        if(height < 0) {
             return -1;
@@ -23,6 +24,7 @@ public class InventoryControl {
     
     public double surfaceAreaOfRaftTest(double longLogLength, 
             double logDiameter, double noLongLogLengths){
+        
         if(longLogLength < 5.5 || longLogLength > 5.5){
             return -1;
         }
