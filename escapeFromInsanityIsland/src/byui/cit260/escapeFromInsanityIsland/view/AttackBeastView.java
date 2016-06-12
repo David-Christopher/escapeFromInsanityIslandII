@@ -144,7 +144,7 @@ public class AttackBeastView {
         itemsObject.setNumberHealthSyringes(itemsObject.getNumberHealthSyringes() + 1);
         
         System.out.println("After defeating the " + battle + " you found a health syringe.");
-        
+        System.out.println("-------------------------------------------");        
         }
         break;
     }
