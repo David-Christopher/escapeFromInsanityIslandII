@@ -5,16 +5,32 @@
  */
 package byui.cit260.escapeFromInsanityIsland.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Christopher
  */
-public class GameBeasts{
+public class GameBeasts implements Serializable{
     
-    public void beastStats (){
     //Beast variables - Serpents, Lions, Wild Cats, Gorillas.
     int maxBeastHealth = 150;
     int maxBeastAttack = 20;
+
+    public int getMaxBeastHealth() {
+        return maxBeastHealth;
+    }
+
+    public void setMaxBeastHealth(int maxBeastHealth) {
+        this.maxBeastHealth = maxBeastHealth;
+    }
+
+    public int getMaxBeastAttack() {
+        return maxBeastAttack;
+    }
+
+    public void setMaxBeastAttack(int maxBeastAttack) {
+        this.maxBeastAttack = maxBeastAttack;
     }
     
 }

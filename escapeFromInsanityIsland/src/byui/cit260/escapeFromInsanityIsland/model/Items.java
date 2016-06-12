@@ -17,6 +17,34 @@ public class Items implements Serializable {
     
     private String name;
     private String description;
+    //Item variable
+    int numberHealthSyringes = 2;
+    int healthSyringesHealAmount = 15;
+    int healthSyringesDropChance = 20; //20 percent chance
+
+    public int getNumberHealthSyringes() {
+        return numberHealthSyringes;
+    }
+
+    public void setNumberHealthSyringes(int numberHealthSyringes) {
+        this.numberHealthSyringes = numberHealthSyringes;
+    }
+
+    public int getHealthSyringesHealAmount() {
+        return healthSyringesHealAmount;
+    }
+
+    public void setHealthSyringesHealAmount(int healthSyringesHealAmount) {
+        this.healthSyringesHealAmount = healthSyringesHealAmount;
+    }
+
+    public int getHealthSyringesDropChance() {
+        return healthSyringesDropChance;
+    }
+
+    public void setHealthSyringesDropChance(int healthSyringesDropChance) {
+        this.healthSyringesDropChance = healthSyringesDropChance;
+    }
     
 
     public Items() {
@@ -74,12 +102,5 @@ public class Items implements Serializable {
         return "Tool{" + "name=" + name + ", description=" + description + '}';
     }
     
-    public void healthSyringeStats (){
-        //Item variable
-        int numberHealthSyringes = 5;
-        int healthSyringesHealAmount = 50;
-        int healthSyringesDropChance = 20; //20 percent chance  
-
-    }
 }
 

@@ -20,69 +20,102 @@ import java.util.Scanner;
 public class AttackBeastView {
     
     Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+    Scanner userKeyboard = new Scanner(System.in); // get infile for keyboard
     Random rand = new Random (); 
     
     public void displayAttackBeast() {
         
     //Beast variables
-    String[] jungleBeasts = {"Serpents", "Lions", "Wild Cats", "Gorillas"};
+    String[] jungleBeasts = { "Serpent", "Lion", "Wild Cat", "Gorilla" };
     
     //Beast Variables
-    GameBeasts GameBeastsObject = new GameBeasts ();
-    GameBeastsObject.beastStats();
-    
+    GameBeasts gameBeastsObject = new GameBeasts ();
+
     //Player variables
-    Player PlayerObject = new Player ();
-    PlayerObject.playerStats();
-    
+    Player playerObject = new Player ();
+          
     //Item Variables
-    Items ItemsObject = new Items ();
-    ItemsObject.healthSyringeStats();
-        
+    Items itemsObject = new Items();
+    
     boolean running = true;
     
     System.out.println("Be cautious... Dangerous beasts are lurking about in the jungle!");
     
-   /* JUNGLE:
+    JUNGLE: //GAME PLAY - BEAST BATTLES
     while(running) {
         System.out.println("-------------------------------------------");
-        
-        int beastHealth = rand.nextInt(maxBeastHealth);
 
-        String jungleBeasts = jungleBeasts[rand.nextInt(jungleBeasts.length)];
-        System.out.println(jungleBeasts + " attacked! Prepare to defend yourself.\n");
+        System.out.println("Are you wearing your leather armor worth 2 armor,");
+        System.out.println("jungle wood armor worth 4 armor or smelted iron armor worth 6 armor?");
+        System.out.println("Enter your armor's value below:");
+        
+        if (keyboard.hasNextInt(2)){ 
+            playerObject.setArmor(keyboard.nextInt());
+            System.out.println("//////////////////////////////////////////");            
+            System.out.println("Your armor is now set to " + playerObject.getArmor() + ".");
+            System.out.println("//////////////////////////////////////////");            
+        } 
+        else if (keyboard.hasNextInt(4)){
+            playerObject.setArmor(keyboard.nextInt());
+            System.out.println("//////////////////////////////////////////");            
+            System.out.println("Your armor is now set to " + playerObject.getArmor() + ".");  
+            System.out.println("//////////////////////////////////////////");            
+        }
+        
+        else if (keyboard.hasNextInt(6)){
+            playerObject.setArmor(keyboard.nextInt());
+            System.out.println("//////////////////////////////////////////");
+            System.out.println("Your armor is now set to " + playerObject.getArmor() + ".");
+            System.out.println("//////////////////////////////////////////");            
+        }
+        
+        else {      
+            System.out.print("Please enter a valid armor value: ");
+            keyboard.nextLine();
+        }
+        
+        int beastHealth = rand.nextInt(gameBeastsObject.getMaxBeastHealth());
+
+        String battle = jungleBeasts[rand.nextInt(jungleBeasts.length)];
+        System.out.println(battle + " attacked! Prepare to defend yourself.\n");
+        System.out.println("-------------------------------------------");        
         
         while(beastHealth > 0){
-            System.out.println("*Your health " + health);
-            System.out.println("*" + jungleBeasts + "'s health is " + beastHealth);
+            System.out.println("*Your health " + playerObject.getHealth());
+            System.out.println("*" + battle + "'s health is " + beastHealth);
+            System.out.println("===========================================");            
             System.out.println("What would you like to do next?");
-            System.out.println("1. Attack again");
+            System.out.println("");            
+            System.out.println("1. Attack?");
             System.out.println("2. Use Health Syringe");
             System.out.println("3. Run and hide!");
-            
-            String input = keyboard.nextLine();
+            System.out.println("");
+            System.out.println("Enter your choice here:");
+                        
+            String input = userKeyboard.nextLine();
             if(input.equals("1")){
-                int attackDamageGiven = rand.nextInt(attackDamage);
-                int damageReceived = rand.nextInt(maxBeastAttack);
+                int attackDamageGiven = rand.nextInt(playerObject.getAttackDamage());
+                int damageReceived = rand.nextInt(gameBeastsObject.getMaxBeastAttack());
                 
                 //algorithm **needs to be in a control layer**
                 beastHealth -= attackDamageGiven;
-                health -= damageReceived + armor;
+                playerObject.setHealth(playerObject.getHealth() - damageReceived + playerObject.getArmor());
                 
-                System.out.println("You attacked the " + jungleBeasts + " and gave " + attackDamageGiven + " damage.");
-                System.out.println("Your armor didn't protect you all the way and you were hurt. Your Health is now " + health + ".");
+                System.out.println("You attacked the " + battle + " and gave " + attackDamageGiven + " damage.");
+                System.out.println("Your armor didn't protect you all the way and you were hurt. Your Health is now " + playerObject.getHealth() + ".");
         
-                if(health < 1){
+                if(playerObject.getHealth () < 1){
                     System.out.println("The island is dangerous and you have not survived!");
+                    
                 }
             }
             else if(input.equals("2")){
-                if(numberHealthSyringes > 0) {
-                    health += healthSyringesHealAmount;
-                    numberHealthSyringes--;
+                if(itemsObject.getNumberHealthSyringes() > 0) {
                     
-                    System.out.println("You used a health syringe. Your health is now at" + health + ".");
-                    System.out.println(healthSyringesHealAmount + " health syringes left.");
+                    playerObject.setHealth(playerObject.getHealth() + itemsObject.getHealthSyringesHealAmount());
+                    itemsObject.setNumberHealthSyringes(itemsObject.getNumberHealthSyringes() - 1);
+                    System.out.println("You used a health syringe. Your health is now at " + playerObject.getHealth () + ".");
+                    System.out.println(itemsObject.getNumberHealthSyringes() + " health syringes left.");
                 }
                 
                 else {
@@ -91,26 +124,30 @@ public class AttackBeastView {
                 
         }
             else if(input.equals("3")){
-                System.out.println("You escaped the " + jungleBeasts + "!");
+                System.out.println("You escaped the " + battle + "!");
+                System.out.println("But in order to escape the jungle you must defeat a beast to escape.");
                 continue JUNGLE;
         }
             else{
                 System.out.println("Invalid entry.");
         }            
-
     }
-        if(health < 1) {
+        if(playerObject.getHealth () < 1) {
             System.out.println("Insanity Island comsumes you. Play again to exscape from Insantiy Island!");
             break;
         }
         System.out.println("-------------------------------------------");
-        System.out.println("You defeated the " + jungleBeasts + ".");
-        if(rand.nextInt(100) < healthSyringesDropChance){
-        numberHealthSyringes++;
-        }
+        System.out.println("You defeated the " + battle + ".");
         
-        System.out.println("After defeating the " + jungleBeasts + "you found a health syring.");
-    }*/
+        if(itemsObject.getHealthSyringesDropChance() > rand.nextInt(100)){
+        
+        itemsObject.setNumberHealthSyringes(itemsObject.getNumberHealthSyringes() + 1);
+        
+        System.out.println("After defeating the " + battle + " you found a health syringe.");
+        
+        }
+        break;
+    }
     }
 
 }

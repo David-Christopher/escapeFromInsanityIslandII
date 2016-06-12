@@ -17,6 +17,34 @@ public class Player implements Serializable{
     private String playersName;
     private double bestTime;
     
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getAttackDamage() {
+        return attackDamage;
+    }
+
+    public void setAttackDamage(int attackDamage) {
+        this.attackDamage = attackDamage;
+    }
+
+    public int getArmor() {
+        return armor;
+    }
+
+    //Player variables. BELONGS in Player
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
+    private int health = 100;
+    private int attackDamage = 75; //Based on ONE weapon for now. 
+    private int armor = 10; //Based on a temp armor value for now. 
+    
    
     public Player() {
     }
@@ -72,12 +100,5 @@ public class Player implements Serializable{
     public String toString() {
         return "Player{" + "name=" + playersName + ", bestTime=" + bestTime + '}';
     }
-        
-    public void playerStats(){
-        //Player variables
-        int health = 100;
-        int attackDamage = 75; //Based on ONE weapon for now. 
-        int armor = 10; //Based on a temp armor value for now. 
-
-    }
+          
 }
