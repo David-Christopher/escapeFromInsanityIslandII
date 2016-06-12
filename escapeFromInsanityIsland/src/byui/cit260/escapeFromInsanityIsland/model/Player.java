@@ -43,7 +43,7 @@ public class Player implements Serializable{
     }
     private int health = 100;
     private int attackDamage = 75; //Based on ONE weapon for now. 
-    private int armor = 10; //Based on a temp armor value for now. 
+    private int armor; //Based on a temp armor value for now. 
     
    
     public Player() {

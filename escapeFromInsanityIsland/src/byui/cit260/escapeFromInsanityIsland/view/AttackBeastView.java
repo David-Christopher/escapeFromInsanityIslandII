@@ -43,36 +43,38 @@ public class AttackBeastView {
     
     JUNGLE: //GAME PLAY - BEAST BATTLES
     while(running) {
-        System.out.println("-------------------------------------------");
+        System.out.println("\n-------------------------------------------");
 
-        System.out.println("Are you wearing your leather armor worth 2 armor,");
+        System.out.println("Are you wearing your leather armor worth 3 armor,");
         System.out.println("jungle wood armor worth 4 armor or smelted iron armor worth 6 armor?");
         System.out.println("Enter your armor's value below:");
         
-        if (keyboard.hasNextInt(2)){ 
-            playerObject.setArmor(keyboard.nextInt());
-            System.out.println("//////////////////////////////////////////");            
-            System.out.println("Your armor is now set to " + playerObject.getArmor() + ".");
-            System.out.println("//////////////////////////////////////////");            
-        } 
-        else if (keyboard.hasNextInt(4)){
-            playerObject.setArmor(keyboard.nextInt());
-            System.out.println("//////////////////////////////////////////");            
-            System.out.println("Your armor is now set to " + playerObject.getArmor() + ".");  
-            System.out.println("//////////////////////////////////////////");            
+        int armorValue = keyboard.nextInt();
+        if (armorValue == 3) {         
+                playerObject.setArmor(armorValue);
+                System.out.println("//////////////////////////////////////////");
+                System.out.println("Your armor is now set to " + playerObject.getArmor() + ".");
+                System.out.println("//////////////////////////////////////////");
+        }
+       
+        else if (armorValue == 4) {
+                playerObject.setArmor(armorValue);
+                System.out.println("//////////////////////////////////////////");
+                System.out.println("Your armor is now set to " + playerObject.getArmor() + ".");
+                System.out.println("//////////////////////////////////////////");
+        }
+        else if (armorValue == 6) {
+                playerObject.setArmor(armorValue);
+                System.out.println("//////////////////////////////////////////");
+                System.out.println("Your armor is now set to " + playerObject.getArmor() + ".");
+                System.out.println("//////////////////////////////////////////");
+        }
+        else{
+                System.out.print("Please enter a valid armor value:");
+                keyboard.nextLine();
+                continue JUNGLE;
         }
         
-        else if (keyboard.hasNextInt(6)){
-            playerObject.setArmor(keyboard.nextInt());
-            System.out.println("//////////////////////////////////////////");
-            System.out.println("Your armor is now set to " + playerObject.getArmor() + ".");
-            System.out.println("//////////////////////////////////////////");            
-        }
-        
-        else {      
-            System.out.print("Please enter a valid armor value: ");
-            keyboard.nextLine();
-        }
         
         int beastHealth = rand.nextInt(gameBeastsObject.getMaxBeastHealth());
 
@@ -106,7 +108,7 @@ public class AttackBeastView {
         
                 if(playerObject.getHealth () < 1){
                     System.out.println("The island is dangerous and you have not survived!");
-                    
+                    break;
                 }
             }
             else if(input.equals("2")){
