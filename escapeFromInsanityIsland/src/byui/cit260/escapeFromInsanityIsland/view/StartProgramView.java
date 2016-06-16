@@ -36,7 +36,8 @@ public final class StartProgramView  extends View{
                   + "\n* for tracks. Ultimately, you will need to find    *"
                   + "\n* material to build a boat so you can get back     *"
                   + "\n* home.                                            *"
-                  + "\n****************************************************");
+                  + "\n****************************************************"
+                  + "\nPlease enter your name: ");
             }
  
     @Override

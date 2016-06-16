@@ -37,7 +37,7 @@ public class EscapeFromInsanityIsland {
             
         // create StartProgramView and display the start program view
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        startProgramView.display();
         
         //player class
         Player playerOne = new Player();

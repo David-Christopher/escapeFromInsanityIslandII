@@ -21,6 +21,7 @@ public class MainMenuView extends View {
         this.displayBanner();
        */
         super("\n"
+                + "\n Please enter your selection:"
                 + "\n------------------------------------------------"
                 + "\n| Main Menu                                    |"
                 + "\n------------------------------------------------"

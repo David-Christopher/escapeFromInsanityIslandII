@@ -20,6 +20,7 @@ public class GameMenuView extends View {
            this.displayBanner();
        */
         super("\n"
+                  + "\n Please enter your selection:"
                   + "\n------------------------------------------------"
                   + "\n| Game Menu                                    |"
                   + "\n------------------------------------------------"
