@@ -76,7 +76,7 @@ public class MainMenuView extends View {
         //System.out.println("\n*** displayHelpMenu() function called ***");
              //Get and display help menu
         GameHelpMenuView helpMenu = new GameHelpMenuView();
-        helpMenu.displayHelpMenu();
+        helpMenu.display();
         
     }
 
