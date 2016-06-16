@@ -13,21 +13,16 @@ import java.util.Scanner;
  *
  * @author andrenell
  */
-public final class StartProgramView {
-
-    private final String promptMessage;
+public final class StartProgramView  extends View{
     
     public StartProgramView(){
     
-        this.promptMessage = "\nPlease enter your name: ";
+       /* this.promptMessage = "\nPlease enter your name: ";
         // display the banner when view created
         this.displayBanner();
-    }
-
-    public void displayBanner() {
-         
-            System.out.println(
-                    "\n****************************************************"
+       */
+    
+        super("\n****************************************************"
                   + "\n* This is the game of Escape From Insanity Island  *"
                   + "\n* You wake up from a deep sleep and have no        *"
                   + "\n* memory of who you are. All you know is that      *"
@@ -42,56 +37,21 @@ public final class StartProgramView {
                   + "\n* material to build a boat so you can get back     *"
                   + "\n* home.                                            *"
                   + "\n****************************************************"
-                  );
+                  + "\nPlease enter your name: ");
             }
-    public void displayStartProgramView() {
+ 
+    @Override
+    public boolean doAction(String value) {
+        value.toUpperCase(); // convert choice to upper case
 
-        boolean done = false; // set flag to not done
-	do {
-		// Prompt for and get the players name
-                String playersName = this.getPlayersName();
-		if (playersName.toUpperCase().equals("Q")) // user wants to quit
-                    return; // player exits the game
-                    
-		// do the action and display the next view
-                done = this.doAction(playersName);
-        } while (!done);        
-    }
-
-    private String getPlayersName() {
-        
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-
-        while (!valid) { // loop whilean invalid value is entered
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; // end the loop
-               
-        }
-        return value; // return the value entered
-                        
-    }
-
-    private boolean doAction(String playersName) {
-
-        if(playersName.length() < 2){
+        if(value.length() < 2){
             System.out.println("\nInvalid players name: "
             + "The name must be greater than one character in length");
             return false;
         }
 
         // create Player with specified name
-        Player player = GameControl.createPlayer(playersName);
+        Player player = GameControl.createPlayer(value);
         if (player == null) { // if unsuccessful then
             System.out.println("\nError creating the player.");
             return false;

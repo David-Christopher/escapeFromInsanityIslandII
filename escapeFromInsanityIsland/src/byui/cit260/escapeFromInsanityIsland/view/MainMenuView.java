@@ -15,8 +15,13 @@ import java.util.Scanner;
  */
 public class MainMenuView extends View {
     
-    public MainMenuView() {
+    public MainMenuView() { 
+        /* this.promptMessage = "\nPlease enter your selection: ";
+        // display the banner when view created
+        this.displayBanner();
+       */
         super("\n"
+                + "\n Please enter your selection:"
                 + "\n------------------------------------------------"
                 + "\n| Main Menu                                    |"
                 + "\n------------------------------------------------"
@@ -60,7 +65,7 @@ public class MainMenuView extends View {
         
             //Get and display game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        gameMenu.display();
         
     }
         
