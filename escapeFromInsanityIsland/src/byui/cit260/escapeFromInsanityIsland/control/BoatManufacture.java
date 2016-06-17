@@ -11,19 +11,19 @@ package byui.cit260.escapeFromInsanityIsland.control;
  */
 public class BoatManufacture {
 
-    public int testTotalVine(int numShortLogs, int numLongLogs, int numStrands) {
+    public boolean testTotalVine(int numShortLogs, int numLongLogs, int numStrands) {
         
         int requiredTotalVineLength = 270;
         int indVineLength = 6;
-        int x = 0;
+        boolean x = false;
         if(numShortLogs * numLongLogs * numStrands * indVineLength < requiredTotalVineLength) {
-            x = -1;
+            x = false;
         }
         else if(numShortLogs * numLongLogs * numStrands * indVineLength > requiredTotalVineLength) {
-            x = -1;
+            x = false;
         }
         else if(numShortLogs * numLongLogs * numStrands * indVineLength == requiredTotalVineLength) {
-            x = 1;
+            x = true;
         }       
         return x;
     }

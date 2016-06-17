@@ -62,7 +62,11 @@ import java.util.Scanner;
             }
             return value; // return the value entered
 
-        }        
+        }    
+        
+        public void setDisplayMessage(String message){
+            this.displayMessage = message;
+        };
     
 }
     

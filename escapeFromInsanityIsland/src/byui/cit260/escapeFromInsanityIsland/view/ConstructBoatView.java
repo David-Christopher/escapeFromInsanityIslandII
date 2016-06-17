@@ -11,50 +11,53 @@ import java.util.Scanner;
  *
  * @author Andre Nell
  */
-//
-//public class ConstructBoatView extends View {
-//    
-////    public ConstructBoatView() {
-////        super("\n"
-////                + "\n***************************************************************"
-////                + "\n| You need  to construct a raft. The surface area of the raft *"
-////                + "\n| must be exactly 19.25 Square Yards. You have the following  *"
-////                + "\n| Items available on the Island to build your raft.           *"
-////                + "\n| - Short Logs that are 3.5 Yards long with .7 yard diameter. *"
-////                + "\n| - Long Logs that are 5.5 Yards long with .7 yard diameter.  *"
-////                + "\n| - 270ft of Vines from trees.                                *"
-////                + "\n| The floor of your raft must have no gaps. There must be 3   *"
-////                + "\n| cross members for support. Wherever logs cross they must be *"
-////                + "\n| lashed with vine. The vine must be braided so that they are *"
-////                + "\n| strong enough to withstand a sea voyage. Each rope must be  *"
-////                + "\n| 6ft in length once braided. How many of each of the         *"
-////                + "\n| following must you select to meet these requirements.       *"
-////                + "\n| - Number of Short Logs.                                     *"
-////                + "\n| - Number of Long Logs.                                      *"
-////                + "\n| - Number of braids.                                         *"
-////                + "\n***************************************************************");
-////    }
+
+public class ConstructBoatView extends View {
+    
+    public ConstructBoatView() {
+        super("\n"
+                + "\n***************************************************************"
+                + "\n| You need  to construct a raft. The surface area of the raft *"
+                + "\n| must be exactly 19.25 Square Yards. You have the following  *"
+                + "\n| Items available on the Island to build your raft.           *"
+                + "\n| - Short Logs that are 3.5 Yards long with .7 yard diameter. *"
+                + "\n| - Long Logs that are 5.5 Yards long with .7 yard diameter.  *"
+                + "\n| - 270ft of Vines from trees.                                *"
+                + "\n| The floor of your raft must have no gaps. There must be 3   *"
+                + "\n| cross members for support. Wherever logs cross they must be *"
+                + "\n| lashed with vine. The vine must be braided so that they are *"
+                + "\n| strong enough to withstand a sea voyage. Each rope must be  *"
+                + "\n| 6ft in length once braided. How many of each of the         *"
+                + "\n| following must you select to meet these requirements.       *"
+                + "\n| - Number of Short Logs.                                     *"
+                + "\n| - Number of Long Logs.                                      *"
+                + "\n| - Number of braids.                                         *"
+                + "\n***************************************************************"
+                + "\n Enter the number of Short Logs you think you need:");
+    }
  
-//    @Override
-//    public boolean doAction(int shortLogs, int longLogs, int strands) {
-//        value.toUpperCase(); // convert choice to upper case
-//
-//
-//            String value;
-//            boolean done = false;
-//            do {
-//                int shortLogs = 0;
-//                int longLogs = 0;
-//                int strands = 0;
-//            
-//                // Obtain selections from user
-//                System.out.println("Enter the number of Short Logs you think you need: ");
-//                shortLogs = in.nextInt();
-//                System.out.println("Enter the number of Long Logs you think you need: ");
-//                longLogs = in.nextInt();
-//                System.out.println("Enter the number of strands each 6 ft rope should include: ");
-//                strands = in.nextInt(); 
-//                
-//                done = this.doAction(shortLogs, longLogs, strands);
-//        return false; 
-//    }
+    @Override
+    public boolean doAction(String value) {
+        value.toUpperCase(); // convert choice to upper case
+
+                int shortLogs = 0;
+                int longLogs = 0;
+                int strands = 0;
+            
+                // Obtain selections from user
+                shortLogs = Integer.parseInt(value);                
+                this.setDisplayMessage("Enter the number of Long Logs you think you need: ");
+                longLogs = Integer.parseInt(this.getInput());
+                this.setDisplayMessage("Enter the number of strands each 6 ft rope should include: ");
+                strands = Integer.parseInt(this.getInput()); 
+                
+            BoatManufacture boatManufacture = new BoatManufacture();
+            if(boatManufacture.testTotalVine(shortLogs, longLogs, strands)){
+                System.out.println("Congratulations, your estimates are correct!");
+                return true;
+            } 
+        this.setDisplayMessage("Try again!" 
+                + "\n Enter the number of Short Logs you think you need:");
+        return false;
+    }
+}

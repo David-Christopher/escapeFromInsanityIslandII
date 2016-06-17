@@ -110,9 +110,9 @@ public class GameMenuView extends View {
         useToolWeaponSyringe.displayUseToolWeaponSyringeView();
     }
     private void constructBoat() {
-    /*        ConstructBoatView constructBoat = new ConstructBoatView();
-        constructBoat.displayConstructBoatView();
-    */
+            ConstructBoatView constructBoat = new ConstructBoatView();
+            constructBoat.display();
+    
     }
     private void moveToLocation() {
             MoveToLocationView moveToLocation = new MoveToLocationView();
