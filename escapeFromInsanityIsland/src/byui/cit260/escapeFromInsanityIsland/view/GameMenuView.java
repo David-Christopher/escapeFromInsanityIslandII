@@ -20,7 +20,6 @@ public class GameMenuView extends View {
            this.displayBanner();
        */
         super("\n"
-                  + "\n Please enter your selection:"
                   + "\n------------------------------------------------"
                   + "\n| Game Menu                                    |"
                   + "\n------------------------------------------------"
@@ -33,7 +32,8 @@ public class GameMenuView extends View {
                   + "\nU - Use Tool, Weapon, or Syringe"
                   + "\nB - Construct Boat"
                   + "\nM - Move to Location"
-                  + "\n------------------------------------------------");
+                  + "\n------------------------------------------------"
+                  + "\n Please enter your selection:");
     }
 
     @Override
@@ -70,8 +70,7 @@ public class GameMenuView extends View {
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
-                break;
-        }
+                break;       }
         return false; 
     }
     
@@ -107,7 +106,7 @@ public class GameMenuView extends View {
 
     private void useToolWeaponSyringe() {
             UseToolWeaponSyringeView useToolWeaponSyringe = new UseToolWeaponSyringeView();
-        useToolWeaponSyringe.displayUseToolWeaponSyringeView();
+        useToolWeaponSyringe.display();
     }
     private void constructBoat() {
             ConstructBoatView constructBoat = new ConstructBoatView();

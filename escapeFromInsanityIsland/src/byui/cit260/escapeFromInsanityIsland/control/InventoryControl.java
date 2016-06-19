@@ -34,4 +34,28 @@ public class InventoryControl {
         double surfaceAreaOfRaft = (longLogLength * (logDiameter * noLongLogLengths));
             return surfaceAreaOfRaft;
     }
+        public static void axeItem() {
+        System.out.println("\n*** axeItem stub function called ***");
+    }
+        public static void hammerItem() {
+        System.out.println("\n*** hammerItem stub function called ***");
+    }
+        public static void sawItem() {
+        System.out.println("\n*** sawItem stub function called ***");
+    }
+        public static void spearItem() {
+        System.out.println("\n*** spearItem stub function called ***");
+    }
+        public static void bowItem() {
+        System.out.println("\n*** bowItem stub function called ***");
+    }
+        public static void swordItem() {
+        System.out.println("\n*** swordItem stub function called ***");
+    }
+        public static void shieldItem() {
+        System.out.println("\n*** shieldItem stub function called ***");
+    }
+        public static void syringeItem() {
+        System.out.println("\n*** syringeItem stub function called ***");
+    }        
 }

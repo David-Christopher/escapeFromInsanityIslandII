@@ -21,7 +21,6 @@ public class MainMenuView extends View {
         this.displayBanner();
        */
         super("\n"
-                + "\n Please enter your selection:"
                 + "\n------------------------------------------------"
                 + "\n| Main Menu                                    |"
                 + "\n------------------------------------------------"
@@ -29,8 +28,9 @@ public class MainMenuView extends View {
                 + "\nG - Continue Saved Game" 
                 + "\nH - Get Help With How to Play"
                 + "\nS - Save Game"
-                + "\nQ - Quit"                
-                + "\n------------------------------------------------");
+                + "\nQ - Quit"               
+                + "\n------------------------------------------------"
+                + "\n Please enter your selection:");
     }
 
     @Override
