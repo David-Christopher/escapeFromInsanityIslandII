@@ -1,39 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.escapeFromInsanityIsland.view;
+import java.util.Scanner;
 
-//import java.util.ArrayList;
-
-/*
+/**
  *
- * @author Christopher
+ * @author Andre Nell
  */
-public class ViewInventoryView {
-    public void displayViewInventoryView() {
-System.out.println("\n*** displayViewInventory() function called ***");   
 
-//Incomplete test code for possible future use. 
-
-/*public class ViewInventoryView {
+public class ViewInventoryView extends View {
     
-    
-    private static Object pocketKnife;
-    private static Object stick;
-    private static Object coconut;
-    public static void displayViewInventory() {
-        
-        ArrayList Items = new ArrayList ();
-        //add items to arraylist
-        Items.add("pocketKnife");
-        Items.add("stick");
-        Items.add("coconut");
-        
-        System.out.println("Here are your available items: " + Items.size() + ".";*/
-                          
-        
+    public ViewInventoryView() {
+        super("\n"
+                  + "\n Please enter your selection:"
+                  + "\n------------------------------------------------"
+                  + "\n| Inventory                                    |"
+                  + "\n------------------------------------------------"
+                  + "\nI - Display Inventory Items"
+                  + "\n------------------------------------------------");
     }
 
+    @Override
+    public boolean doAction(String value) {
+        value.toUpperCase(); // convert choice to upper case
+        
+        switch (value) {
+            case "I": // Attack beast; not a permanent menu item.
+                this.displayViewInventoryItems();
+                break;             
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }
+        return false; 
+    }
+
+    private void displayViewInventoryItems() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

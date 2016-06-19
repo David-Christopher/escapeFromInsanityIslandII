@@ -87,7 +87,7 @@ public class GameMenuView extends View {
         
     private void viewInventory(){
            ViewInventoryView viewInventory = new ViewInventoryView();
-        viewInventory.displayViewInventoryView();  
+        viewInventory.display();  
     }
 
     private void craftHealthSyringe() {
