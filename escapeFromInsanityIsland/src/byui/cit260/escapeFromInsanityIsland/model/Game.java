@@ -109,16 +109,4 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
     }
-
-    public void setPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setInventory(GameControl.InventoryItem[] inventoryList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-    
-    
 }

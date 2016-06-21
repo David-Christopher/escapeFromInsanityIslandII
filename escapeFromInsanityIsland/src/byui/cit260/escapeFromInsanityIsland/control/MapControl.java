@@ -12,13 +12,17 @@ import byui.cit260.escapeFromInsanityIsland.model.Map;
  * @author andrenell
  */
 public class MapControl {
-
-    static Map createMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    static void moveGameCharacterToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public static Map createMap() {
+        //create map
+        Map map = new Map (25, 25);
+        
+        //create list of scenes
+        Scene[] scenes = createScenes();
+        
+        //assign scenes to locations in map
+        assignScenesToLocations(map, scenes);
+        return map;
     }
     
 }

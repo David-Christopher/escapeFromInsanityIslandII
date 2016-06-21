@@ -36,6 +36,11 @@ public class GameControl {
         //move characters to starting position in the map
         MapControl.moveGameCharacterToStartingLocation(map);
     }
+    
+    public static InventoryItem[] createInventoryList() {
+        System.out.println("*** called createInventoryList() in GameControl ***");
+        return null;
+    }
 
     public static Player createPlayer(String playersName) {
  
@@ -51,18 +56,6 @@ public class GameControl {
         return player;
     }
 
-    public static int startNewGame(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private static InventoryItem[] createInventoryList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private static class InventoryItem {
-
-        public InventoryItem() {
-        }
-    }
-    
 }
+    
+
