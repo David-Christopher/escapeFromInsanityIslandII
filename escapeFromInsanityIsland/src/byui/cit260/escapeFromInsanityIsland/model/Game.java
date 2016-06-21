@@ -20,8 +20,9 @@ public class Game implements Serializable{
     
     private Boat boat;
     private Map map;
-    private Player[] player;
-    private Items[] items;
+    private Player player;
+    private InventoryItem[] inventory;
+    private String [] gameCharacter;
 
     public Game() {
     }
@@ -42,23 +43,29 @@ public class Game implements Serializable{
         this.map = map;
     }
 
-    public Player[] getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 
-    public void setPlayer(Player[] player) {
+    public void setPlayer(Player player) {
         this.player = player;
     }
 
-    public Items[] getItems() {
-        return items;
+    public InventoryItem[] getInventory() {
+        return inventory;
     }
 
-    public void setItems(Items[] items) {
-        this.items = items;
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
     }
-    
-    
+
+    public String[] getGameCharacter() {
+        return gameCharacter;
+    }
+
+    public void setGameCharacter(String[] gameCharacter) {
+        this.gameCharacter = gameCharacter;
+    }
 
     public double getTotalTime() {
         return totalTime;
@@ -109,4 +116,12 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
     }
+
+    private class InventoryItem {
+
+        public InventoryItem() {
+        }
+    }
+
+
 }

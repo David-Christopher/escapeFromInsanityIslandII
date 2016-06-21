@@ -9,7 +9,7 @@ import byui.cit260.escapeFromInsanityIsland.model.Map;
 
 /**
  *
- * @author andrenell
+ * @author christopherdavid and andrenell
  */
 public class MapControl {
     
@@ -24,5 +24,9 @@ public class MapControl {
         assignScenesToLocations(map, scenes);
         return map;
     }
-    
+
+    public static void moveGameCharacterToStartingLocation() {
+    System.out.println("*** called moveGameCharacterToStartingLocation() in GameControl ***");
+    }
+
 }

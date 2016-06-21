@@ -29,6 +29,7 @@ public class GameControl {
         game.setInventory(inventoryList);
         
         Boat boat = new Boat(); //create boat
+        game.setBoat(boat); //save boat
         
         Map map = MapControl.createMap(); //create and initilalize a new map
         game.setMap(map); // save map in game
@@ -55,6 +56,7 @@ public class GameControl {
         
         return player;
     }
+
 
 }
     
