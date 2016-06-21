@@ -17,6 +17,27 @@ public class Player implements Serializable{
     private String playersName;
     private double bestTime;
     
+    private Game game;
+    private GameCharacter gameCharacter;
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public GameCharacter getGameCharacter() {
+        return gameCharacter;
+    }
+
+    public void setGameCharacter(GameCharacter gameCharacter) {
+        this.gameCharacter = gameCharacter;
+    }
+    
+    
+    
     public int getHealth() {
         return health;
     }

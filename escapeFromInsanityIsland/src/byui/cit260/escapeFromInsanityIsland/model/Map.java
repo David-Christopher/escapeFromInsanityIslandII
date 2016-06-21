@@ -16,9 +16,20 @@ public class Map implements Serializable{
     //class instance variable
     private double rowCount;
     private double columnCount;
+    
+    private Game[] game;
 
     public Map() {
     }
+
+    public Game[] getGame() {
+        return game;
+    }
+
+    public void setGame(Game[] game) {
+        this.game = game;
+    }
+    
     
     public double getRowCount() {
         return rowCount;

@@ -18,10 +18,41 @@ public class Location implements Serializable{
     private int column;
     private String visited;
     private double amountRemaining;
+    
+    private GameCharacter gameCharacter;
+    private Scene scene;
+    private Items items;
 
     public Location() {
     }
+
+    public GameCharacter getGameCharacter() {
+        return gameCharacter;
+    }
+
+    public void setGameCharacter(GameCharacter gameCharacter) {
+        this.gameCharacter = gameCharacter;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Items getItems() {
+        return items;
+    }
+
+    public void setItems(Items items) {
+        this.items = items;
+    }
    
+    
+    
+    
     public int getRow() {
         return row;
     }

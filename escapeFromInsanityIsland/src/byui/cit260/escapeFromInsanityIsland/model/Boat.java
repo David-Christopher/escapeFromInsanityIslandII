@@ -18,9 +18,21 @@ public class Boat implements Serializable{
     private String description;
     private double width;
     private double length;
+    
+    private Game[] game;
 
     public Boat() {
     }
+
+    public Game[] getGame() {
+        return game;
+    }
+
+    public void setGame(Game[] game) {
+        this.game = game;
+    }
+    
+    
     
     public String getDescription() {
         return description;

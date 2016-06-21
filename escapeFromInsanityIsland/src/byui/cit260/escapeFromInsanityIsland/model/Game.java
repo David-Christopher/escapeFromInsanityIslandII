@@ -5,6 +5,7 @@
  */
 package byui.cit260.escapeFromInsanityIsland.model;
 
+import byui.cit260.escapeFromInsanityIsland.control.GameControl;
 import java.io.Serializable;
 
 /**
@@ -16,8 +17,45 @@ public class Game implements Serializable{
     //class instance variables
     private double totalTime;
     private double noPeople;
+    
+    private Boat boat;
+    private Map map;
+    private Player[] player;
+    private Items[] items;
 
     public Game() {
+    }
+
+    public Boat getBoat() {
+        return boat;
+    }
+
+    public void setBoat(Boat boat) {
+        this.boat = boat;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Player[] getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player[] player) {
+        this.player = player;
+    }
+
+    public Items[] getItems() {
+        return items;
+    }
+
+    public void setItems(Items[] items) {
+        this.items = items;
     }
     
     
@@ -70,6 +108,14 @@ public class Game implements Serializable{
     @Override
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
+    }
+
+    public void setPlayer(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setInventory(GameControl.InventoryItem[] inventoryList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

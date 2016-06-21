@@ -5,6 +5,9 @@
  */
 package byui.cit260.escapeFromInsanityIsland.control;
 
+import byui.cit260.escapeFromInsanityIsland.model.Boat;
+import byui.cit260.escapeFromInsanityIsland.model.Game;
+import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import escapefrominsanityisland.EscapeFromInsanityIsland;
 
@@ -15,7 +18,23 @@ import escapefrominsanityisland.EscapeFromInsanityIsland;
 public class GameControl {
     
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        
+        Game game = new Game(); //Create new game
+        EscapeFromInsanityIsland.setCurrentGame(game); //save in EscapeFromInsanityIsland
+        
+        game.setPlayer(player); // save player in game
+        
+        //Create new invenory list and save in the game
+        InventoryItem[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
+        
+        Boat boat = new Boat(); //create boat
+        
+        Map map = MapControl.createMap(); //create and initilalize a new map
+        game.setMap(map); // save map in game
+        
+        //move characters to starting position in the map
+        MapControl.moveGameCharacterToStartingLocation(map);
     }
 
     public static Player createPlayer(String playersName) {
@@ -34,6 +53,16 @@ public class GameControl {
 
     public static int startNewGame(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static InventoryItem[] createInventoryList() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static class InventoryItem {
+
+        public InventoryItem() {
+        }
     }
     
 }

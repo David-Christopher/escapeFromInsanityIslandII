@@ -17,7 +17,16 @@ public class Scene implements Serializable {
     private double travelTime;
     private String blockedLocation;
     private String displaySymbol;
+    private Location[] location;
 
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[] location) {
+        this.location = location;
+    }
+    
     public Scene() {
     }
     

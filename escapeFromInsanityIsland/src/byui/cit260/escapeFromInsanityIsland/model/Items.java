@@ -17,11 +17,31 @@ public class Items implements Serializable {
     
     private String name;
     private String description;
+    
+    private Game game;
+    private Location location;
+    
     //Item variable
     int numberHealthSyringes = 2;
     int healthSyringesHealAmount = 15;
     int healthSyringesDropChance = 20; //20 percent chance
 
+    public Game getGame() {
+        return game;
+    }
+    
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+    
+    public void setGame(Game game) {
+        this.game = game;
+    }
+    
     public int getNumberHealthSyringes() {
         return numberHealthSyringes;
     }
