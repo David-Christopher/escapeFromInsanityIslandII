@@ -19,21 +19,26 @@ public class Location implements Serializable{
     private String visited;
     private double amountRemaining;
     
-    private GameCharacter gameCharacter;
+    private Array<GameCharacter> gameCharacter;
     private Scene scene;
     private Items items;
 
     public Location() {
     }
 
-    public GameCharacter getGameCharacter() {
+    /**
+     *
+     * @param <any>
+     */
+    public <any> getGameCharacter() {
         return gameCharacter;
     }
 
-    public void setGameCharacter(GameCharacter gameCharacter) {
+    public void setGameCharacter(<any> gameCharacter) {
         this.gameCharacter = gameCharacter;
     }
 
+    
     public Scene getScene() {
         return scene;
     }
@@ -49,9 +54,6 @@ public class Location implements Serializable{
     public void setItems(Items items) {
         this.items = items;
     }
-   
-    
-    
     
     public int getRow() {
         return row;
@@ -125,6 +127,10 @@ public class Location implements Serializable{
     @Override
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
+    }
+
+    void setVisited(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

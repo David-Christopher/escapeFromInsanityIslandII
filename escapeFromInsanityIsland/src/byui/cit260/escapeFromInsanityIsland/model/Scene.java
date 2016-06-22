@@ -19,6 +19,89 @@ public class Scene implements Serializable {
     private String displaySymbol;
     private Location[] location;
 
+    private void setMapSymbol(String st) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setBlocked(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public enum SceneType {
+        start,
+        forest,
+        hilltop,
+        shoreline,
+        cave,
+        well,
+        buriedTreasure,
+        grove,
+        lake,
+        waterfall,
+        valley,
+        finish;
+    }
+    
+    public static Scene[] createScenes(){
+        Scene[] scenes = new Scene[SceneType.values().length];
+        
+        Scene startingScene = new Scene();
+        startingScene.setDescription(
+                  "You don't know how you arrived here but here you are."
+                + "Now is the time to be resourceful and figure out how"
+                + "to get back. As you explore Insanity Island, you will"
+                + "discover tools and clues to get back home.");
+        startingScene.setMapSymbol("ST");
+        startingScene.setBlocked(false);
+        startingScene.setTravelTime(240);
+        scenes[SceneType.start.ordinal()] = startingScene;
+        
+        Scene finishingScene = new Scene();
+        finishingScene.setDescription(
+                  "Congratulations. You made it off the Island alive -    "
+                + "well for the most part at least. You may never recover "
+                + "but you will never forget your experience on . . . . . "
+                + "Insanity Island.");
+        finishingScene.setMapSymbol("FN");
+        finishingScene.setBlocked(false);
+        finishingScene.setTravelTime(Double.POSITIVE_INFINITY);
+        scenes[SceneType.finish.ordinal()] = finishingScene;
+        
+        return scenes;
+    }
+
+    private static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[][] locations = map.getLocations();
+        
+        //start point
+        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.forest.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.hilltop.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.shoreline.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.cave.ordinal()]);
+        locations[1][0].setScene(scenes[SceneType.well.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.buriedTreasure.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.grove.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.lake.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.waterfall.ordinal()]);
+        locations[2][0].setScene(scenes[SceneType.valley.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.forest.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.forest.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.forest.ordinal()]);
+        locations[2][4].setScene(scenes[SceneType.hilltop.ordinal()]);
+        locations[3][0].setScene(scenes[SceneType.shoreline.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.cave.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.well.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.buriedTreasure.ordinal()]);
+        locations[3][4].setScene(scenes[SceneType.grove.ordinal()]);
+        locations[4][0].setScene(scenes[SceneType.lake.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.waterfall.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.valley.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.forest.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.finish.ordinal()]);
+    }
+    
+    
     public Location[] getLocation() {
         return location;
     }

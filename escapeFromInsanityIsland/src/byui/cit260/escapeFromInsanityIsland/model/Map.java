@@ -16,14 +16,38 @@ public class Map implements Serializable{
     //class instance variable
     private double rowCount;
     private double columnCount;
+    private Location[][] locations;
     
     private Game[] game;
 
     public Map() {
     }
 
-    public Map(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Map(int rowCount, int columnCount) {
+        
+        if(rowCount < 1 || columnCount < 1){
+            System.out.println("The number of rows and columns must be greater than 1.");
+            return;
+        }
+        
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+        
+        //create 2d array for location objects
+        this.locations = new Location[rowCount][columnCount];
+        
+        for(int row = 0; row < rowCount; row++) {
+            for(int column = 0; column < columnCount; column++) {
+                // create and initialize new  Location object instant
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                // assign the location  object to  the current position in the array
+                locations [row][column] = location;
+            }
+        }
     }
 
     public Game[] getGame() {
@@ -83,6 +107,10 @@ public class Map implements Serializable{
     @Override
     public String toString() {
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+    }
+
+    Location[][] getLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
