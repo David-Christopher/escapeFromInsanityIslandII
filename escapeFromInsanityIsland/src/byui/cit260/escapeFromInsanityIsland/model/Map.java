@@ -108,11 +108,6 @@ public class Map implements Serializable{
     public String toString() {
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
     }
-
-    Location[][] getLocations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     
     
     

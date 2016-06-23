@@ -6,6 +6,8 @@
 package byui.cit260.escapeFromInsanityIsland.control;
 
 import byui.cit260.escapeFromInsanityIsland.model.Map;
+import byui.cit260.escapeFromInsanityIsland.model.Scene;
+import static byui.cit260.escapeFromInsanityIsland.model.Scene.createScenes;
 
 /**
  *
@@ -21,12 +23,13 @@ public class MapControl {
         Scene[] scenes = createScenes();
         
         //assign scenes to locations in map
-        assignScenesToLocations(map, scenes);
+        Scene.assignScenesToLocations(map, scenes);
         return map;
     }
 
     public static void moveGameCharacterToStartingLocation() {
     System.out.println("*** called moveGameCharacterToStartingLocation() in GameControl ***");
     }
+
 
 }

@@ -61,7 +61,7 @@ public class Scene implements Serializable {
         forestScene.setDescription(
                   "You traveled into a dense forest where wood is abundant. "
                 + "Look around and you may find the pieces of logs you need "
-                + "to escape off the island. Be careful of forest beasts!");
+                + "to escape off the island. Be careful of the beasts!");
         forestScene.setMapSymbol("FR");
         forestScene.setBlocked(false);
         forestScene.setTravelTime(240);
@@ -188,8 +188,8 @@ public class Scene implements Serializable {
         return scenes;
     }
 
-    private static void assignScenesToLocations(Map map, Scene[] scenes) {
-        Location[][] locations = map.getLocations();
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[][] locations = map.getLocation();
         
         //start point
         locations[0][0].setScene(scenes[SceneType.forest.ordinal()]);

@@ -29,7 +29,7 @@ public enum GameCharacter implements Serializable {
 
     GameCharacter(String description) {
         this.description = description;
-        coordinates = new Point(1,1);
+        coordinates = new Point(0,0);
     }
 
     public GameCharacter[] getGamecharacter() {
