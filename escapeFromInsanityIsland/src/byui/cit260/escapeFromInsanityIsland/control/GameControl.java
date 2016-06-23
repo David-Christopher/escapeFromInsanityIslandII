@@ -25,7 +25,7 @@ public class GameControl {
         game.setPlayer(player); // save player in game
         
         //Create new invenory list and save in the game
-        InventoryItem[] inventoryList = GameControl.createInventoryList();
+        InventoryItem[] inventoryList = createInventoryList();
         game.setInventory(inventoryList);
         
         Boat boat = new Boat(); //create boat

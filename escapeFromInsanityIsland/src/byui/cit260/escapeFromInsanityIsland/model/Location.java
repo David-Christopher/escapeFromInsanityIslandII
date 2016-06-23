@@ -16,28 +16,32 @@ public class Location implements Serializable{
     // Class instance variables
     private int row;
     private int column;
-    private String visited;
+    private boolean visited;
     private double amountRemaining;
     
-    private Array<GameCharacter> gameCharacter;
+    private ArrayList<GameCharacter> characters;
     private Scene scene;
     private Items items;
 
     public Location() {
+        
     }
 
-    /**
-     *
-     * @param <any>
-     */
-    public <any> getGameCharacter() {
-        return gameCharacter;
+    public boolean isVisited() {
+        return visited;
     }
 
-    public void setGameCharacter(<any> gameCharacter) {
-        this.gameCharacter = gameCharacter;
+    public void setVisited(boolean visited) {
+        this.visited = visited;
     }
 
+    public <any> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(<any> characters) {
+        this.characters = characters;
+    }
     
     public Scene getScene() {
         return scene;
@@ -69,14 +73,6 @@ public class Location implements Serializable{
 
     public void setColumn(int column) {
         this.column = column;
-    }
-
-    public String getVisited() {
-        return visited;
-    }
-
-    public void setVisited(String visited) {
-        this.visited = visited;
     }
 
     public double getAmountRemaining() {
@@ -123,7 +119,7 @@ public class Location implements Serializable{
         }
         return true;
     }
-
+    
     @Override
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
