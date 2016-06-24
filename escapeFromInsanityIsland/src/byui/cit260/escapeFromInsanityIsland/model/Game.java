@@ -117,4 +117,10 @@ public class Game implements Serializable{
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
     }
 
+    private static class InventoryItem {
+
+        public InventoryItem() {
+        }
+    }
+
 }

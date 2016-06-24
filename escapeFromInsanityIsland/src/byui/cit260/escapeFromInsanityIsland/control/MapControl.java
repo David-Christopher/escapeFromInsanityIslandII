@@ -26,10 +26,12 @@ public class MapControl {
         Scene.assignScenesToLocations(map, scenes);
         return map;
     }
-
-    public static void moveGameCharacterToStartingLocation() {
+                       
+    public static void moveGameCharacterToStartingLocation(Map map) {
     System.out.println("*** called moveGameCharacterToStartingLocation() in GameControl ***");
     }
+
+
 
 
 }

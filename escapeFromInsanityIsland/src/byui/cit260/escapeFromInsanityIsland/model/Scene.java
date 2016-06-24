@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.escapeFromInsanityIsland.model;
+import byui.cit260.escapeFromInsanityIsland.model.Map;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -19,14 +20,7 @@ public class Scene implements Serializable {
     private String displaySymbol;
     private Location[] location;
 
-    private void setMapSymbol(String st) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void setBlocked(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+   
     public enum SceneType {
         start,
         forest,
@@ -192,10 +186,10 @@ public class Scene implements Serializable {
         Location[][] locations = map.getLocation();
         
         //start point
-        locations[0][0].setScene(scenes[SceneType.forest.ordinal()]);
+        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.forest.ordinal()]);
         locations[0][2].setScene(scenes[SceneType.forest.ordinal()]);
-        locations[0][3].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.forest.ordinal()]);
         locations[0][4].setScene(scenes[SceneType.shoreline.ordinal()]);
         locations[1][0].setScene(scenes[SceneType.forest.ordinal()]);
         locations[1][1].setScene(scenes[SceneType.forest.ordinal()]);

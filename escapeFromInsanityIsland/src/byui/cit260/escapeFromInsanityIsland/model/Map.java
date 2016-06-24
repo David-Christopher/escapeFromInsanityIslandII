@@ -25,7 +25,7 @@ public class Map implements Serializable{
 
     public Map(int rowCount, int columnCount) {
         
-        if(rowCount < 1 || columnCount < 1){
+        if(rowCount < 0 || columnCount < 0){
             System.out.println("The number of rows and columns must be greater than 1.");
             return;
         }
@@ -40,12 +40,12 @@ public class Map implements Serializable{
             for(int column = 0; column < columnCount; column++) {
                 // create and initialize new  Location object instant
                 Location location = new Location();
-                location.setColumn(column);
-                location.setRow(row);
+                location.setColumn(columnCount);
+                location.setRow(rowCount);
                 location.setVisited(false);
                 
                 // assign the location  object to  the current position in the array
-                locations [row][column] = location;
+                locations [rowCount][columnCount] = location;
             }
         }
     }
@@ -106,7 +106,7 @@ public class Map implements Serializable{
 
     @Override
     public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + "}";
     }
     
     

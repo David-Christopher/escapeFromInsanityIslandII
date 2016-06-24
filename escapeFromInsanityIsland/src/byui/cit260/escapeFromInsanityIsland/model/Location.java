@@ -19,13 +19,8 @@ public class Location implements Serializable{
     private boolean visited;
     private double amountRemaining;
     
-    private ArrayList<GameCharacter> characters;
     private Scene scene;
     private Items items;
-
-    public Location() {
-        
-    }
 
     public boolean isVisited() {
         return visited;
@@ -33,14 +28,6 @@ public class Location implements Serializable{
 
     public void setVisited(boolean visited) {
         this.visited = visited;
-    }
-
-    public <any> getCharacters() {
-        return characters;
-    }
-
-    public void setCharacters(<any> characters) {
-        this.characters = characters;
     }
     
     public Scene getScene() {

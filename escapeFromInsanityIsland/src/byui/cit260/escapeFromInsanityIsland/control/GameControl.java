@@ -31,11 +31,12 @@ public class GameControl {
         Boat boat = new Boat(); //create boat
         game.setBoat(boat); //save boat
         
-        Map map = MapControl.createMap(); //create and initilalize a new map
+        Map map = new Map(); //create and initilalize a new map
         game.setMap(map); // save map in game
         
         //move characters to starting position in the map
         MapControl.moveGameCharacterToStartingLocation(map);
+        player.setLocation(map.getLocations(0, 0));
     }
     
     public static InventoryItem[] createInventoryList() {
@@ -123,7 +124,7 @@ public class GameControl {
             
             return inventory;
     }
-
+    
     public enum Item {
         longLogs,
         shortLogs,

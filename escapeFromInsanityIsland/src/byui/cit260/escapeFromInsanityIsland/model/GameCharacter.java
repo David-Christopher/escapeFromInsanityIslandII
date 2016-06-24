@@ -13,14 +13,17 @@ import java.util.Objects;
  *
  * @author andrenell
  */
-public enum GameCharacter implements Serializable {
+public class GameCharacter implements Serializable {
+   
     
-    Wilson("It is the name of the volleyball in Castaway."),
+    /*Wilson("It is the name of the volleyball in Castaway."),
     Andre("A participant with a strange accent from DEEP DEEP south."),
     Christopher("A hairy Yeti."),
-    Bro_Jackson("The wise sage.");
+    Bro_Jackson("The wise sage.");*/
+    // We already have a character name by getting name
+    //class instance variable
     
-    //classs instance variable
+    private String name;
     private final String description;
     private final Point coordinates;
     
@@ -38,8 +41,16 @@ public enum GameCharacter implements Serializable {
 
     public void setGamecharacter(GameCharacter[] gamecharacter) {
         this.gamecharacter = gamecharacter;
+    } 
+    
+    public String getName() {
+        return name;
     }
-
+    
+    public void setName (String name){
+        this.name = name;
+    }
+    
     public Location[] getLocation() {
         return location;
     }
@@ -59,8 +70,8 @@ public enum GameCharacter implements Serializable {
         return coordinates;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Character{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
-//    }    
+    @Override
+        public String toString() {
+        return "Character{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
+    }    
 }
