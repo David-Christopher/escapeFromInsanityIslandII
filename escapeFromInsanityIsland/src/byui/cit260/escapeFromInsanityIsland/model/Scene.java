@@ -15,11 +15,10 @@ import java.util.Objects;
 public class Scene implements Serializable {
      // Class instance variables
     private String description;
-    private double travelTime;
-    private String blockedLocation;
     private String displaySymbol;
     private Location[] location;
 
+    private String MapSymbol;
    
     public enum SceneType {
         start,
@@ -47,8 +46,6 @@ public class Scene implements Serializable {
                 + "to get back. As you explore Insanity Island, you will "
                 + "discover tools and clues to get back home.");
         startingScene.setMapSymbol("ST");
-        startingScene.setBlocked(false);
-        startingScene.setTravelTime(240);
         scenes[SceneType.start.ordinal()] = startingScene;
 
         Scene forestScene = new Scene();
@@ -57,8 +54,6 @@ public class Scene implements Serializable {
                 + "Look around and you may find the pieces of logs you need "
                 + "to escape off the island. Be careful of the beasts!");
         forestScene.setMapSymbol("FR");
-        forestScene.setBlocked(false);
-        forestScene.setTravelTime(240);
         scenes[SceneType.forest.ordinal()] = forestScene;
 
         Scene hilltopScene = new Scene();
@@ -67,8 +62,6 @@ public class Scene implements Serializable {
                 + "ruins. Others may have lived here before you arrived. "
                 + "Keep an eye out for useful items like tools or weapons.");
         hilltopScene.setMapSymbol("HT");
-        hilltopScene.setBlocked(false);
-        hilltopScene.setTravelTime(240);
         scenes[SceneType.hilltop.ordinal()] = hilltopScene;
 
         Scene shorelineScene = new Scene();
@@ -78,8 +71,6 @@ public class Scene implements Serializable {
                 + "to construct a boat. Once you have the right resources "
                 + "escaping the island will be possible.");
         shorelineScene.setMapSymbol("HT");
-        shorelineScene.setBlocked(false);
-        shorelineScene.setTravelTime(240);
         scenes[SceneType.shoreline.ordinal()] = shorelineScene;        
 
         Scene caveScene = new Scene();
@@ -89,8 +80,6 @@ public class Scene implements Serializable {
                 + "resources will be discovered. Rather dangerous so be "
                 + "quick or you may find yourself cornered by a beast!");
         caveScene.setMapSymbol("CV");
-        caveScene.setBlocked(false);
-        caveScene.setTravelTime(240);
         scenes[SceneType.cave.ordinal()] = caveScene;     
         
         Scene wellScene = new Scene();
@@ -98,8 +87,6 @@ public class Scene implements Serializable {
                   "The new area you travel to has a well. What a nice, peaceful "
                 + " spot. Rest here for a while before moving onward.");
         wellScene.setMapSymbol("WL");
-        wellScene.setBlocked(false);
-        wellScene.setTravelTime(240);
         scenes[SceneType.well.ordinal()] = wellScene; 
 
         Scene buriedTreasureScene = new Scene();
@@ -108,8 +95,6 @@ public class Scene implements Serializable {
                 + "the soil. Have a look around. You may come across some "
                 + "hidden treasures that can help with escaping.");
         buriedTreasureScene.setMapSymbol("BT");
-        buriedTreasureScene.setBlocked(false);
-        buriedTreasureScene.setTravelTime(240);
         scenes[SceneType.buriedTreasure.ordinal()] = buriedTreasureScene;    
         
         Scene groveScene = new Scene();
@@ -120,8 +105,6 @@ public class Scene implements Serializable {
                 + "size to build a boat out of? Maybe, there are some vines! "
                 + "If so you'll need to harvest some.");
         groveScene.setMapSymbol("GV");
-        groveScene.setBlocked(false);
-        groveScene.setTravelTime(240);
         scenes[SceneType.grove.ordinal()] = groveScene;         
         
         Scene lakeScene = new Scene();
@@ -130,8 +113,6 @@ public class Scene implements Serializable {
                 + "This may be a popular watering hole for most the "
                 + "animals and beasts. Look around but be alert.");
         lakeScene.setMapSymbol("LK");
-        lakeScene.setBlocked(false);
-        lakeScene.setTravelTime(240);
         scenes[SceneType.lake.ordinal()] = lakeScene;          
         
         Scene waterfallScene = new Scene();
@@ -140,8 +121,6 @@ public class Scene implements Serializable {
                 + "displays a wonderful rainbow from its mist. What is this?"
                 + "Is there a hideout behind the waterfall?");
         waterfallScene.setMapSymbol("WF");
-        waterfallScene.setBlocked(false);
-        waterfallScene.setTravelTime(240);
         scenes[SceneType.waterfall.ordinal()] = waterfallScene;    
         
         Scene valleyScene = new Scene();
@@ -152,8 +131,6 @@ public class Scene implements Serializable {
                 + "beasts. Run through as fast you can to avoid being"
                 + "caught.");
         valleyScene.setMapSymbol("VY");
-        valleyScene.setBlocked(false);
-        valleyScene.setTravelTime(240);
         scenes[SceneType.valley.ordinal()] = valleyScene;
         
         Scene riverScene = new Scene();
@@ -164,8 +141,6 @@ public class Scene implements Serializable {
                 + "you can follow the river to reach the shoreline in "
                 + "the near future.");
         riverScene.setMapSymbol("RV");
-        riverScene.setBlocked(false);
-        riverScene.setTravelTime(240);
         scenes[SceneType.river.ordinal()] = riverScene;        
         
         Scene finishingScene = new Scene();
@@ -175,15 +150,13 @@ public class Scene implements Serializable {
                 + "but you will never forget your experience on . . . . . "
                 + "Insanity Island.");
         finishingScene.setMapSymbol("FN");
-        finishingScene.setBlocked(false);
-        finishingScene.setTravelTime(Double.POSITIVE_INFINITY);
         scenes[SceneType.finish.ordinal()] = finishingScene;
         
         return scenes;
     }
 
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
-        Location[][] locations = map.getLocation();
+        Location[][] locations = map.getLocation ();
         
         //start point
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
@@ -233,22 +206,6 @@ public class Scene implements Serializable {
         this.description = description;
     }
 
-    public double getTravelTime() {
-        return travelTime;
-    }
-
-    public void setTravelTime(double travelTime) {
-        this.travelTime = travelTime;
-    }
-
-    public String getBlockedLocation() {
-        return blockedLocation;
-    }
-
-    public void setBlockedLocation(String blockedLocation) {
-        this.blockedLocation = blockedLocation;
-    }
-
     public String getDisplaySymbol() {
         return displaySymbol;
     }
@@ -257,12 +214,18 @@ public class Scene implements Serializable {
         this.displaySymbol = displaySymbol;
     }
 
+    public String getMapSymbol() {
+        return MapSymbol;
+    }
+
+    public void setMapSymbol(String MapSymbol) {
+        this.MapSymbol = MapSymbol;
+    }    
+    
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 97 * hash + Objects.hashCode(this.description);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
-        hash = 97 * hash + Objects.hashCode(this.blockedLocation);
         hash = 97 * hash + Objects.hashCode(this.displaySymbol);
         return hash;
     }
@@ -278,14 +241,10 @@ public class Scene implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Scene other = (Scene) obj;
-        if (Double.doubleToLongBits(this.travelTime) != Double.doubleToLongBits(other.travelTime)) {
-            return false;
+        final Scene other = (Scene) obj;{
         }
+        
         if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.blockedLocation, other.blockedLocation)) {
             return false;
         }
         if (!Objects.equals(this.displaySymbol, other.displaySymbol)) {
@@ -296,7 +255,7 @@ public class Scene implements Serializable {
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", blockedLocation=" + blockedLocation + ", displaySymbol=" + displaySymbol + '}';
+        return "Scene{" + "description=" + description + ", displaySymbol=" + displaySymbol + '}';
     }
        
     
