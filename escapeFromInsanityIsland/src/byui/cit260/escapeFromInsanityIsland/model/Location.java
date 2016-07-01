@@ -75,7 +75,6 @@ public class Location implements Serializable{
         int hash = 7;
         hash = 37 * hash + this.row;
         hash = 37 * hash + this.column;
-        hash = 37 * hash + Objects.hashCode(this.visited);
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.amountRemaining) ^ (Double.doubleToLongBits(this.amountRemaining) >>> 32));
         return hash;
     }
