@@ -10,6 +10,7 @@ import byui.cit260.escapeFromInsanityIsland.model.Game;
 import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import escapefrominsanityisland.EscapeFromInsanityIsland;
+import byui.cit260.escapeFromInsanityIsland.model.Items;
 
 /**
  *
@@ -25,101 +26,70 @@ public class GameControl {
         game.setPlayer(player); // save player in game
         
         //Create new invenory list and save in the game
-        InventoryItem[] inventoryList = createInventoryList();
-        game.setInventory(inventoryList);
+        Items[] inventoryList = GameControl.createInventoryList();
+       game.setInventory(inventoryList);
         
         Boat boat = new Boat(); //create boat
         game.setBoat(boat); //save boat
         
-        Map map = new Map(); //create and initilalize a new map
-        game.setMap(map); // save map in game
-        
-        //move characters to starting position in the map
-        MapControl.moveGameCharacterToStartingLocation(map);
-        player.setLocation(map.getLocations(0, 0));
+       MapControl.createMap();
+
     }
     
-    public static InventoryItem[] createInventoryList() {
+    public static Items[] createInventoryList() {
             // created array of inventory
-            Game.InventoryItem[] inventory =
-                new Game.InventoryItem[13];
+            Items[] inventory = new Items[13];
             
-            Game.InventoryItem longLogs = new Game.InventoryItem();
+            Items longLogs = new Items();
             longLogs.setDescription("Long Logs");
-            longLogs.setQuantityInStock(0);
-            longLogs.setRequiredAmount(5);
             inventory[Item.longLogs.ordinal()] = longLogs;
             
-            Game.InventoryItem shortLogs = new Game.InventoryItem();
+            Items shortLogs = new Items();
             shortLogs.setDescription("Short Logs");
-            shortLogs.setQuantityInStock(0);
-            shortLogs.setRequiredAmount(3);
             inventory[Item.shortLogs.ordinal()] = shortLogs;
             
-            Game.InventoryItem strands = new Game.InventoryItem();
+            Items strands = new Items();
             strands.setDescription("Vine Strands");
-            strands.setQuantityInStock(0);
-            strands.setRequiredAmount(0);
             inventory[Item.strands.ordinal()] = strands;            
             
-            Game.InventoryItem sickle = new Game.InventoryItem();
+            Items sickle = new Items();
             sickle.setDescription("Sickle");
-            sickle.setQuantityInStock(0);
-            sickle.setRequiredAmount(0);
             inventory[Item.sickle.ordinal()] = sickle;     
             
-            Game.InventoryItem saw = new Game.InventoryItem();
+            Items saw = new Items();
             saw.setDescription("Saw");
-            saw.setQuantityInStock(0);
-            saw.setRequiredAmount(0);
             inventory[Item.saw.ordinal()] = saw;            
                         
-            Game.InventoryItem ore = new Game.InventoryItem();
+            Items ore = new Items();
             ore.setDescription("Ore");
-            ore.setQuantityInStock(0);
-            ore.setRequiredAmount(0);
             inventory[Item.ore.ordinal()] = ore;        
             
-            Game.InventoryItem axe = new Game.InventoryItem();
+            Items axe = new Items();
             axe.setDescription("Axe");
-            axe.setQuantityInStock(0);
-            axe.setRequiredAmount(0);
             inventory[Item.axe.ordinal()] = axe;                
 
-            Game.InventoryItem hammer = new Game.InventoryItem();
+            Items hammer = new Items();
             hammer.setDescription("Hammer");
-            hammer.setQuantityInStock(0);
-            hammer.setRequiredAmount(0);
             inventory[Item.hammer.ordinal()] = hammer;
 
-            Game.InventoryItem spear = new Game.InventoryItem();
+            Items spear = new Items();
             spear.setDescription("Spear");
-            spear.setQuantityInStock(0);
-            spear.setRequiredAmount(0);
             inventory[Item.spear.ordinal()] = spear; 
 
-            Game.InventoryItem bowArrow = new Game.InventoryItem();
+           Items bowArrow = new Items();
             bowArrow.setDescription("Bow and Arrow");
-            bowArrow.setQuantityInStock(0);
-            bowArrow.setRequiredAmount(0);
             inventory[Item.bowArrow.ordinal()] = bowArrow;            
         
-            Game.InventoryItem sword = new Game.InventoryItem();
+            Items sword = new Items();
             sword.setDescription("Sword");
-            sword.setQuantityInStock(0);
-            sword.setRequiredAmount(0);
             inventory[Item.sword.ordinal()] = sword;    
             
-            Game.InventoryItem shield = new Game.InventoryItem();
+            Items shield = new Items();
             shield.setDescription("Shield");
-            shield.setQuantityInStock(0);
-            shield.setRequiredAmount(0);
             inventory[Item.shield.ordinal()] = shield; 
             
-            Game.InventoryItem healthSyringe = new Game.InventoryItem();
+            Items healthSyringe = new Items();
             healthSyringe.setDescription("Health Syringe");
-            healthSyringe.setQuantityInStock(0);
-            healthSyringe.setRequiredAmount(0);
             inventory[Item.healthSyringe.ordinal()] = healthSyringe;    
             
             return inventory;

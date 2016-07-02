@@ -17,7 +17,6 @@ public class Items implements Serializable {
     
     private String name;
     private String description;
-    
     private Game game;
     private Location location;
     
@@ -66,8 +65,14 @@ public class Items implements Serializable {
         this.healthSyringesDropChance = healthSyringesDropChance;
     }
     
-
-    public Items() {
+    public Items (){
+        
+    }
+    
+    public Items(String description, String name, Game game) {
+        this.description = description;
+        this.name = name;   
+        this.game = game;        
     }
     
     
