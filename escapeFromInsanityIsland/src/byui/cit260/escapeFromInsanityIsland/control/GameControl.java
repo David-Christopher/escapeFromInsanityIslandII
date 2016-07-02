@@ -8,7 +8,9 @@ package byui.cit260.escapeFromInsanityIsland.control;
 import byui.cit260.escapeFromInsanityIsland.model.Boat;
 import byui.cit260.escapeFromInsanityIsland.model.Game;
 import byui.cit260.escapeFromInsanityIsland.model.Map;
+import byui.cit260.escapeFromInsanityIsland.model.Location;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
+import byui.cit260.escapeFromInsanityIsland.model.Scene;
 import escapefrominsanityisland.EscapeFromInsanityIsland;
 import byui.cit260.escapeFromInsanityIsland.model.Items;
 
@@ -27,7 +29,7 @@ public class GameControl {
         
         //Create new invenory list and save in the game
         Items[] inventoryList = GameControl.createInventoryList();
-       game.setInventory(inventoryList);
+        game.setInventory(inventoryList);
         
         Boat boat = new Boat(); //create boat
         game.setBoat(boat); //save boat
@@ -110,6 +112,32 @@ public class GameControl {
         shield,
         healthSyringe;        
     }
+    
+    public static Items[] getSortedInventoryList() {
+        
+        // get inventory list for the current game
+        Items[] originalInventoryList = 
+                EscapeFromInsanityIsland.getCurrentGame().getInventory();
+        
+        // clone (make a copy) orignalList
+        Items[] inventoryList = originalInventoryList.clone();
+        
+       // using a BubbleSort to sort the list of inventoryList by name
+        Items tempInventoryItem;
+        for (int i = 0; i < inventoryList.length-1; i++) {
+            for (int x = 0; x < inventoryList.length-1-i; x++) {
+                if (inventoryList[x].getDescription().
+                    compareToIgnoreCase(inventoryList[x + 1].getDescription()) > 0) {
+                    tempInventoryItem = inventoryList[x];
+                    inventoryList[x] = inventoryList[x+1];
+                    inventoryList[x+1] = tempInventoryItem;
+                }
+            }
+        }
+        
+        return inventoryList;
+    }
+            
     public static Player createPlayer(String playersName) {
  
         if (playersName == null) {

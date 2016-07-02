@@ -21,8 +21,9 @@ public class Game implements Serializable{
     private Boat boat;
     private Map map;
     private Player player;
-    private InventoryItem[] inventory;
+    private Items[] inventory;
     private String [] gameCharacter;
+    private SceneType[] Scene;
 
     public Game() {
     }
@@ -51,11 +52,11 @@ public class Game implements Serializable{
         this.player = player;
     }
 
-    public InventoryItem[] getInventory() {
+    public Items[] getInventory() {
         return inventory;
     }
 
-    public void setInventory(InventoryItem[] inventory) {
+    public void setInventory(Items [] inventory) {
         this.inventory = inventory;
     }
 
@@ -81,6 +82,14 @@ public class Game implements Serializable{
 
     public void setNoPeople(double noPeople) {
         this.noPeople = noPeople;
+    }
+    
+    public SceneType[] getScene() {
+        return Scene;
+    }
+
+    public void setScene(SceneType[] Scene) {
+        this.Scene = Scene;
     }
 
     @Override
@@ -114,7 +123,7 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
+        return "Game{noPeople=" + noPeople + '}';
     }
 
     private static class InventoryItem {

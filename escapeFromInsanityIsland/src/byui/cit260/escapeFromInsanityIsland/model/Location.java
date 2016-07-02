@@ -22,6 +22,10 @@ public class Location implements Serializable{
     private Scene scene;
     private Items items;
 
+    Location() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public boolean isVisited() {
         return visited;
     }

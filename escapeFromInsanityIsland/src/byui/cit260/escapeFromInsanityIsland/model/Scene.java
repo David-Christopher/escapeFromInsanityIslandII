@@ -35,7 +35,7 @@ public class Scene implements Serializable {
         river,
         finish;
     }
-    
+        
     public static Scene[] createScenes(){
         Scene[] scenes = new Scene[SceneType.values().length];
         
@@ -187,6 +187,13 @@ public class Scene implements Serializable {
     }
     
     
+    Scene(String description){
+        this.description = description;
+    }
+    public String getDescription(){
+        return this.description;
+    }  
+    
     public Location[] getLocation() {
         return location;
     }
@@ -198,14 +205,6 @@ public class Scene implements Serializable {
     public Scene() {
     }
     
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getDisplaySymbol() {
         return displaySymbol;
     }
@@ -220,7 +219,7 @@ public class Scene implements Serializable {
 
     public void setMapSymbol(String MapSymbol) {
         this.MapSymbol = MapSymbol;
-    }    
+    }   
     
     @Override
     public int hashCode() {
