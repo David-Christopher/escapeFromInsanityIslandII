@@ -53,7 +53,7 @@ public class ConstructBoatView extends View {
                 
             BoatManufacture boatManufacture = new BoatManufacture();
             if(boatManufacture.testTotalVine(shortLogs, longLogs, strands)){
-                System.out.println("Congratulations, your estimates are correct!");
+                this.console.println("Congratulations, your estimates are correct!");
                 return true;
             } 
         this.setDisplayMessage("Try again!" 

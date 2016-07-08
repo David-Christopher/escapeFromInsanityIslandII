@@ -5,12 +5,18 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
+import escapefrominsanityisland.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
+
 /**
  *
  * @author Christopher
  */
 public class MoveToLocationView {
+    protected final PrintWriter console = 
+            EscapeFromInsanityIsland.getOutFile();    
+    
     public void displayMoveToLocationView() {
-    System.out.println("\n*** displayMoveToLocation() function called ***");
+    this.console.println("\n*** displayMoveToLocation() function called ***");
     }
 }

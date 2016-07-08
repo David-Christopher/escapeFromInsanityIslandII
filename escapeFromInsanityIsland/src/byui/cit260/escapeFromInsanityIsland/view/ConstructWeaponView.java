@@ -5,12 +5,18 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
+import escapefrominsanityisland.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
+
 /**
  *
  * @author Christopher
  */
 public class ConstructWeaponView {
+    protected final PrintWriter console = 
+            EscapeFromInsanityIsland.getOutFile();    
+    
     public void displayConstructWeaponView() {
-    System.out.println("\n*** displayConstructWeapon() function called ***");
+    this.console.println("\n*** displayConstructWeapon() function called ***");
     }
 }

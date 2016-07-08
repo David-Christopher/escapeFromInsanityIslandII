@@ -6,6 +6,8 @@
 package byui.cit260.escapeFromInsanityIsland.view;
 
 
+import escapefrominsanityisland.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -14,7 +16,7 @@ import java.util.Scanner;
  */
 
 public class StartGameView extends View {
-    
+
     public StartGameView() {
         super("\n****************************************************"
           + "\n* How are you feeling? Depending on how you are    *"
@@ -49,29 +51,29 @@ public class StartGameView extends View {
                 this.happy();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false; 
     }
 
     private void confused() {
-        System.out.println("\n*** confused() function called ***");
+        this.console.println("\n*** confused() function called ***");
     }
 
     private void angry() {
-        System.out.println("\n*** angry() function called ***");
+        this.console.println("\n*** angry() function called ***");
     }
 
     private void worried() {
-        System.out.println("\n*** worried() function called ***");
+        this.console.println("\n*** worried() function called ***");
     }
 
     private void happy() {
-        System.out.println("\n*** happy() function called ***");
+        this.console.println("\n*** happy() function called ***");
     }
 
     private void quit() {
-        System.out.println("\n*** quit() function called ***");
+        this.console.println("\n*** quit() function called ***");
     }
 }

@@ -23,9 +23,9 @@ public class ViewMapView {
         Map map = game.getMap();
         
         //get the map locations from the current game 
-        System.out.println("*************************"); 
-        System.out.println("View Map");
-        System.out.println("*************************");
+        this.console.println("*************************"); 
+        this.console.println("View Map");
+        this.console.println("*************************");
         
         line = new StringBuilder("                   ");
                 line.insert(0, "0");
@@ -33,7 +33,7 @@ public class ViewMapView {
                 line.insert(2, "2");
                 line.insert(3, "3");
                 line.insert(4, "4");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         /*for ()
              FOR every row in map

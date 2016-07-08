@@ -5,7 +5,9 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
-import java.util.Scanner;
+import escapefrominsanityisland.EscapeFromInsanityIsland;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -15,6 +17,14 @@ import java.util.Scanner;
     public abstract class View implements ViewInterface {
         
         protected String displayMessage;
+        
+        protected final BufferedReader keyboard = 
+                EscapeFromInsanityIsland.getInFile();
+        
+        protected final PrintWriter console = 
+                EscapeFromInsanityIsland.getOutFile();
+        
+        private boolean message;
         
         public View() {
         
@@ -27,9 +37,14 @@ import java.util.Scanner;
         @Override
         public void display() {
         boolean done = false; // set flag to not done
+        
         do {
+            //Display the prompt message
+            this.console.println(this.message);
+            
             //prompt for and get the players name
             String value = this.getInput();
+            
             if (value.toUpperCase().equals("Q")) // user wants to quit
                 return; // Take them back a screen
             
@@ -40,20 +55,19 @@ import java.util.Scanner;
     }
         
         @Override
-        public String getInput() {
-
-            Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        public String getInput() {           
             String value = ""; // value to be returned
             boolean valid = false; // initialize to not valid
-
+            
+            try {
             while (!valid) { // loop whilean invalid value is entered
-                System.out.println("\n" + this.displayMessage);
+                this.console.println("\n" + this.displayMessage);
 
-                value = keyboard.nextLine(); // get next line typed on keyboard
+                value = this.keyboard.readLine(); // get next line typed on keyboard
                 value = value.trim(); // trim off leading and trailing blanks
 
                 if (value.length() < 1) { // value is blank
-                    System.out.println("\nInvalid value: value can not be blank");
+                    ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
                     continue;
                 }
 
@@ -61,7 +75,11 @@ import java.util.Scanner;
 
             }
             return value; // return the value entered
-
+            } catch (Exception e) {
+                this.console.println("Error reading input: " + e.getMessage());
+            }
+            
+            return value;
         }    
         
         public void setDisplayMessage(String message){

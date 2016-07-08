@@ -5,6 +5,9 @@
  */
 package byui.cit260.escapeFromInsanityIsland.model;
 
+import byui.cit260.escapeFromInsanityIsland.view.ErrorView;
+import escapefrominsanityisland.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
 import java.io.Serializable;
 
 /**
@@ -12,6 +15,8 @@ import java.io.Serializable;
  * @author andrenell
  */
 public class Map implements Serializable{
+    protected final PrintWriter console = 
+        EscapeFromInsanityIsland.getOutFile();
     
     //class instance variable
     private double rowCount;
@@ -26,7 +31,7 @@ public class Map implements Serializable{
     public Map(int rowCount, int columnCount) {
         
         if(rowCount < 0 || columnCount < 0){
-            System.out.println("The number of rows and columns must be greater than 1.");
+            ErrorView.display(this.getClass().getName(), "The number of rows and columns must be greater than 1.");
             return;
         }
         
@@ -49,6 +54,15 @@ public class Map implements Serializable{
             }
         }
     }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+        
 
     public Game[] getGame() {
         return game;

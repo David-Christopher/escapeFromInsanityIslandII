@@ -51,7 +51,7 @@ public class MainMenuView extends View {
                 this.saveGame();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
         return false; 
@@ -70,11 +70,32 @@ public class MainMenuView extends View {
     }
         
     private void startExistingGame() {
-        System.out.println("\n*** startExistingGame() function called ***");
+        this.console.println("\n\nEnter the file path for the saved game.");
+        
+        String filePath = this.getInput();
+        
+        try{
+            //Start saved game
+            GameControl.getSavedGame(filePath);
+        }catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame() function called ***");
+        this.console.println("\n\nEnter the file path for file where the game"
+                            + "is needing to be saved.");
+        String filePath = this.getInput();
+        
+        try{
+            //save the gam to location
+            GameControl.saveGame(EscapeFromInsanityIsland.getCurrentGame(), filePath);
+        } catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void displayHelpMenu() {

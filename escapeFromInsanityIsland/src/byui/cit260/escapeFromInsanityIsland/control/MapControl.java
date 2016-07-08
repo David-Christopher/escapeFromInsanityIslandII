@@ -8,12 +8,16 @@ package byui.cit260.escapeFromInsanityIsland.control;
 import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Scene;
 import static byui.cit260.escapeFromInsanityIsland.model.Scene.createScenes;
+import escapefrominsanityisland.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
 
 /**
  *
  * @author christopherdavid and andrenell
  */
 public class MapControl {
+    protected final PrintWriter console = 
+        EscapeFromInsanityIsland.getOutFile();
     
     public static Map createMap() {
         //create map
@@ -27,11 +31,9 @@ public class MapControl {
         return map;
     }
                        
-    public static void moveGameCharacterToStartingLocation(Map map) {
-    System.out.println("*** called moveGameCharacterToStartingLocation() in GameControl ***");
+    public void moveGameCharacterToStartingLocation(Map map) {
+    this.console.println("*** called moveGameCharacterToStartingLocation() in GameControl ***");
     }
-
-
 
 
 }

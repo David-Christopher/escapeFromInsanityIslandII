@@ -45,7 +45,7 @@ public final class StartProgramView  extends View{
         value.toUpperCase(); // convert choice to upper case
 
         if(value.length() < 2){
-            System.out.println("\nInvalid players name: "
+            ErrorView.display(this.getClass().getName(), "\nInvalid players name: "
             + "The name must be greater than one character in length");
             return false;
         }
@@ -53,7 +53,7 @@ public final class StartProgramView  extends View{
         // create Player with specified name
         Player player = GameControl.createPlayer(value);
         if (player == null) { // if unsuccessful then
-            System.out.println("\nError creating the player.");
+            ErrorView.display(this.getClass().getName(),"\nError creating the player.");
             return false;
         }
            
@@ -63,7 +63,7 @@ public final class StartProgramView  extends View{
 
     private void displayNextView(Player player) {
         // Print a customized welcome message
-        System.out.println("\n==============================================="
+        this.console.println("\n==============================================="
                           + "\n Welcome to the game " + player.getPlayersName()
                           + "\n We hope you enjoy it and have fun!"
                           + "\n==============================================="

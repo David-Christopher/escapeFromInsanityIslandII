@@ -5,7 +5,10 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -38,43 +41,49 @@ public class GameMenuView extends View {
 
     @Override
     public boolean doAction(String value) {
-        value.toUpperCase(); // convert choice to upper case
-        
-        switch (value) {
-            case "A": // Attack beast; not a permanent menu item.
-                this.attackBeast();
-                break;             
-            case "V": // View the map
-                this.viewMap();
-                break;   
-            case "I": // View inventory
-                this.viewInventory();
-                break;
-            case "S": // Craft health syringes
-                this.craftHealthSyringe();
-                break;
-            case "T": // Construct tools
-                this.constructTools();
-                break;
-            case "W": // Construct weapons
-                this.constructWeapon();
-                break;
-            case "U": // Use tool/weapon/syringe
-                this.useToolWeaponSyringe();
-                break;
-            case "B": // Construct the boat
-                this.constructBoat();
-                break;
-            case "M": // Move to another location
-                this.moveToLocation();
-                break;
-            default:
-                System.out.println("\n*** Invalid selection *** Try again");
-                break;       }
-        return false; 
+            try {
+                value.toUpperCase(); // convert choice to upper case
+                
+                switch (value) {
+                    case "A": // Attack beast; not a permanent menu item.
+                        this.attackBeast();
+                        break;
+                    case "V": // View the map
+                        this.viewMap();
+                        break;
+                    case "I": // View inventory
+                        this.viewInventory();
+                        break;
+                    case "S": // Craft health syringes
+                        this.craftHealthSyringe();
+                        break;
+                    case "T": // Construct tools
+                        this.constructTools();
+                        break;
+                    case "W": // Construct weapons
+                        this.constructWeapon();
+                        break;
+                    case "U": // Use tool/weapon/syringe
+                        this.useToolWeaponSyringe();
+                        break;
+                    case "B": // Construct the boat
+                        this.constructBoat();
+                        break;
+                    case "M": // Move to another location
+                        this.moveToLocation();
+                        break;
+                    default:
+                        this.console.println("\n*** Invalid selection *** Try again");
+                        break;       
+                } 
+
+            } catch (Exception e) {
+                this.console.println("Error reading input: " + e.getMessage());
+       }
+                return false;
     }
     
-    private void attackBeast() {
+    private void attackBeast() throws IOException {
            AttackBeastView attackBeast = new AttackBeastView();
         attackBeast.displayAttackBeast();     
     }

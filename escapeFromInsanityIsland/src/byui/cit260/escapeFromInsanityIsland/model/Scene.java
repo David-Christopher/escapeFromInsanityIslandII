@@ -19,6 +19,10 @@ public class Scene implements Serializable {
     private Location[] location;
 
     private String MapSymbol;
+
+    private void setDescription(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
     public enum SceneType {
         start,
@@ -192,16 +196,7 @@ public class Scene implements Serializable {
     }
     public String getDescription(){
         return this.description;
-    }  
-    
-    public Location[] getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location[] location) {
-        this.location = location;
-    }
-    
+    }      
     public Scene() {
     }
     

@@ -5,14 +5,20 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
+import escapefrominsanityisland.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
+
 /**
  *
  * @author Christopher
  */
 public class HelpMenuItems {
-       
+    
+    protected final PrintWriter console = 
+                EscapeFromInsanityIsland.getOutFile();
+        
     public void displaySeeGoal() {
-        System.out.println (
+        this.console.println (
                 "In order to progress, you must choose to explore the island, find resources\n" +
                 "to make tools, medicine, weapons, armor, and find a way to escape the island.\n" +
                 "There are traps and beasts prowling the jungle that you will need to avoid.\n" +
@@ -24,21 +30,21 @@ public class HelpMenuItems {
     }
 
     public void displayHowToMove() {
-        System.out.println (
+        this.console.println (
                 "In this game you will be able to move from location to location. There are \n" + 
                 "options to move forwards, backwards, left, or right by typing in F, B, L, or\n" +
                 "R when prompted to move.");  
     }
 
     public void displayToolsAvailable() {
-        System.out.println (
+        this.console.println (
                 "To be able to build the boat you must create the tools needed for the\n" +
                 "boat such as axe, hammer, and saw. Other tools you can create are actual\n" +
                 "weapons such as a spear, bow and arrow, sword, and shield. The last \n" + 
                 "tools available are health syringes which are crafted or found.");  
     }
     public void displayConstructingTools() {
-        System.out.println (
+        this.console.println (
                 "The Construct Tools option will show you the tools needing to be aquired.\n" +
                 "You will need to collect certain items along the way to construct tools.\n" +
                 "When you collect the items required to construct a certain tool a pop\n" +
@@ -46,7 +52,7 @@ public class HelpMenuItems {
                 "certain tool.");
     }
     public void displayViewMap() {
-        System.out.println (
+        this.console.println (
                 "When View Map is selected, a map will be shown on the screen. Only the areas\n" +
                 "that have been explored will appear on the map. An “x” button will be on the \n" +
                 "upper left corner of the map. Clicking this will close the map.");
@@ -54,7 +60,7 @@ public class HelpMenuItems {
     public void displayAvoidingTrapsBeasts() {
         String newLine = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
 
-        System.out.println(
+        this.console.println(
                 "When a trap is encountered, you will have the options to jump, go left around,\n" +
                 "right around, under, or above it. You may also need to dodge projectiles (arrows,\n" +
                 "spears),and hang from a rope. These options will help you to avoid the traps.\n" +

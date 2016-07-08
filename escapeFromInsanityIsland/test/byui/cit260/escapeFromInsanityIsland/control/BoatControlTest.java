@@ -5,6 +5,8 @@
  */
 package byui.cit260.escapeFromInsanityIsland.control;
 
+import escapefrominsanityisland.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -14,6 +16,10 @@ import static org.junit.Assert.*;
  */
 public class BoatControlTest {
     
+            
+    protected final PrintWriter console = 
+            EscapeFromInsanityIsland.getOutFile();
+    
     public BoatControlTest() {
     }
 
@@ -22,7 +28,7 @@ public class BoatControlTest {
      */
     @Test
     public void testCalcTreesToMoveBoat() {
-        System.out.println("calcTreesToMoveBoat");
+        this.console.println("calcTreesToMoveBoat");
         double length = 180.0;
         double radius = 4.5;
         BoatControl instance = new BoatControl();
