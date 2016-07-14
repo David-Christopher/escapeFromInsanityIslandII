@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+         
 package byui.cit260.andresIsland.view;
 
 import byui.cit260.andresIsland.control.SceneControl;
 import byui.cit260.andresIsland.model.Game;
 import byui.cit260.andresIsland.model.GameCharacter;
+import byui.cit260.andresIsland.model.Item;
 import byui.cit260.andresIsland.model.Location;
 import byui.cit260.andresIsland.model.Map;
 import byui.cit260.andresIsland.model.Move;
+import byui.cit260.andresIsland.model.MyExceptions;
 
 /**
  *
@@ -31,7 +34,7 @@ public class ViewMapView extends View {
                 + "\nS - Move South"
                 + "\nD - Move East"
                 + "\nE - Explore Scene"
-                + "\nQ - Quit"
+                + "\nQ - Back To Main Menu"
                 + "\n------------------------------------------------"
                 + "\n Please enter your selection:");
 
@@ -73,23 +76,19 @@ public class ViewMapView extends View {
         switch (value) {
             case "W": // Move North
                 Game.me.setDirection(Move.NORTH);
-                Game.me.move();
-                Game.me.setHealth(Game.me.getHealth() -10);
+                moveOnMap();
                 break;
             case "A": // Move West
                 Game.me.setDirection(Move.WEST);
-                Game.me.move();
-                Game.me.setHealth(Game.me.getHealth() -10);
+                moveOnMap();
                 break;
             case "S": // Move South
                 Game.me.setDirection(Move.SOUTH);
-                Game.me.move();
-                Game.me.setHealth(Game.me.getHealth() -10);
+                moveOnMap();
                 break;
             case "D": // Move East
                 Game.me.setDirection(Move.EAST);
-                Game.me.move();
-                Game.me.setHealth(Game.me.getHealth() -10);
+                moveOnMap();
                 break;
             case "E": // Move East
                 this.exploreScene();
@@ -108,10 +107,31 @@ public class ViewMapView extends View {
     private void exploreScene() {
         String myScene = SceneControl.getDescription(Game.me.getCoordX(), Game.me.getCoordY());
         
-        
-        
         SceneView myView = new SceneView(myScene);
         myView.display();
+        if (Game.me.getBag().hasItem(Item.raft)) {
+            viewEndGame();        
+    }
+}  
+    private void viewEndGame() {
+        EndGameView thisScene = new EndGameView();
+        thisScene.display();
+    }    
+    
+    public void moveOnMap() {
+        try {
+            if((Game.me.getCoordX() == 0 & Game.me.getDirection() == Move.WEST)
+                || (Game.me.getCoordX() == 4 & Game.me.getDirection() == Move.EAST)
+                || (Game.me.getCoordY() == 0 & Game.me.getDirection() == Move.NORTH)
+                || (Game.me.getCoordY() == 4 & Game.me.getDirection() == Move.SOUTH)) {
+                throw new MyExceptions();
+            }else {
+                Game.me.move();
+                Game.me.setHealth(Game.me.getHealth() -10);
+            }       
+        } catch (MyExceptions ex) {
+            System.err.println("Error: " + ex.getMessage());
+        }
     }
 
 }

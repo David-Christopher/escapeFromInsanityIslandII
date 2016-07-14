@@ -1,0 +1,17 @@
+A5 Find a rock-pool with
+trapped fish during low tide.
+If you have the spear, you are
+able to spear them and have
+sushi for your meal today. If
+you don’t have a spear, keep
+looking out for one. If you
+find one you can return later
+to get some fish. This is a
+great place for fishing during
+low tide.
+
+If you have a spear,
+do you catch fish?
+
+Press Y to do.
+Press N to leave.

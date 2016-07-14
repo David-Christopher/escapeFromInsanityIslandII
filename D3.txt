@@ -1,0 +1,4 @@
+D3 You are in the mountain and
+get attacked by a wild goat.
+You are injured and your health
+ suffers.

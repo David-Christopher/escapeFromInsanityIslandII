@@ -1,0 +1,9 @@
+C1 While walking in the
+jungle, you find some berries
+that are red in color. You are
+hungry. 
+
+Do you collect them to eat?
+
+Press Y to take.
+Press N to leave.

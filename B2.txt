@@ -1,0 +1,5 @@
+B2 You find afresh water lake.
+Do you drink from it?
+
+Press Y to take.
+Press N to leave.

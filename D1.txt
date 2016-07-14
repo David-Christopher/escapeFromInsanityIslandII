@@ -1,0 +1,9 @@
+D1 While walking in the jungle
+you discover an old chest. You
+manage to pry it open and it
+contains a knife. 
+
+Do you keep the knife?
+
+Press Y to take.
+Press N to leave.
