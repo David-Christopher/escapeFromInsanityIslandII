@@ -9,11 +9,16 @@ package byui.cit260.andresIsland.exceptions;
  *
  * @author andrenell
  */
+
+
+//Meet requirement for Leson 10 Team "Create a custom exception that inherits from 
+// the super class ...
 public class MyExceptions extends Exception{
 
     public MyExceptions() {
+        super("You tried to move off the map. You cannot do that.");
     }
-
+    
     public MyExceptions(String message) {
         super(message);
     }
@@ -29,8 +34,5 @@ public class MyExceptions extends Exception{
     public MyExceptions(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-//    public MyExceptions() {
-//        super("You tried to move off the map. You cannot do that.");
-//   }
   
 }

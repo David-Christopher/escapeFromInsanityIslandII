@@ -6,6 +6,7 @@
          
 package byui.cit260.andresIsland.view;
 
+import byui.cit260.andresIsland.control.GameControl;
 import byui.cit260.andresIsland.control.SceneControl;
 import byui.cit260.andresIsland.model.Game;
 import byui.cit260.andresIsland.model.GameCharacter;
@@ -119,16 +120,9 @@ public class ViewMapView extends View {
     }    
     
     public void moveOnMap() {
+        //Meets requirement for Lesson 10 Team - 'Catch the custom exception thrown...
         try {
-            if((Game.me.getCoordX() == 0 & Game.me.getDirection() == Move.WEST)
-                || (Game.me.getCoordX() == 4 & Game.me.getDirection() == Move.EAST)
-                || (Game.me.getCoordY() == 0 & Game.me.getDirection() == Move.NORTH)
-                || (Game.me.getCoordY() == 4 & Game.me.getDirection() == Move.SOUTH)) {
-                throw new MyExceptions();
-            }else {
-                Game.me.move();
-                Game.me.setHealth(Game.me.getHealth() -10);
-            }       
+            GameControl.moveOnMap();
         } catch (MyExceptions ex) {
             System.err.println("Error: " + ex.getMessage());
         }

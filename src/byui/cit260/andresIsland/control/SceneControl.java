@@ -18,7 +18,7 @@ public class SceneControl {
 
     public static String getLocationFileName(int x, int y) {
         String result = "";
-        if (x >= 0 && y >= 0) {
+        if (x >= 0 && y >= 0 && x < 6 && y< 6) {
             //Perform a calculation to determine the filename
             result = "" + (char) ((int) ('A') + y) + "" + (x + 1) + ".txt";
         }

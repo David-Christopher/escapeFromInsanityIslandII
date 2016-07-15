@@ -6,8 +6,10 @@
 package byui.cit260.andresIsland.control;
 
 import andresisland.AndresIsland;
+import byui.cit260.andresIsland.exceptions.MyExceptions;
 import byui.cit260.andresIsland.model.Game;
 import byui.cit260.andresIsland.model.Item;
+import byui.cit260.andresIsland.model.Move;
 import byui.cit260.andresIsland.model.Player;
 import java.io.FileNotFoundException;
 
@@ -21,6 +23,18 @@ public class GameControl {
     
     public static void createNewGame(){
         
+    }
+    //Meets requirement for Lesson 10 Team - 'Catch the custom exception thrown...
+    public static void moveOnMap() throws MyExceptions {
+        if((Game.me.getCoordX() == 0 & Game.me.getDirection() == Move.WEST)
+                || (Game.me.getCoordX() == 4 & Game.me.getDirection() == Move.EAST)
+                || (Game.me.getCoordY() == 0 & Game.me.getDirection() == Move.NORTH)
+                || (Game.me.getCoordY() == 4 & Game.me.getDirection() == Move.SOUTH)) {
+                throw new MyExceptions();
+            }else {
+                Game.me.move();
+                Game.me.setHealth(Game.me.getHealth() -10);
+            }   
     }
     
     public static void createNewGame(Player player) throws FileNotFoundException {

@@ -5,9 +5,12 @@
  */
 package andresisland;
 
+import byui.cit260.andresIsland.control.GameFileIO;
 import byui.cit260.andresIsland.model.Game;
 import byui.cit260.andresIsland.model.Player;
 import byui.cit260.andresIsland.view.StartProgramView;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,6 +28,13 @@ public class AndresIsland {
     private static Player player = null;
     
     public static void main(String[] args) {
+        
+        try {
+            
+        } catch (Exception er) {
+            System.err.println("Error: "+er.getMessage());
+            Logger.getLogger(AndresIsland.class.getName()).log(Level.SEVERE, null, er);
+        }
             
         // create StartProgramView and display the start program view
         StartProgramView startProgramView = new StartProgramView();
