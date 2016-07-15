@@ -5,6 +5,8 @@
  */
 package byui.cit260.andresIsland.view;
 
+import byui.cit260.andresIsland.control.GameControl;
+import byui.cit260.andresIsland.exceptions.MyOtherException;
 import byui.cit260.andresIsland.model.Game;
 import byui.cit260.andresIsland.model.Item;
 
@@ -22,15 +24,9 @@ public class ApplyInventoryView extends View {
     public boolean doAction(String value) {
         value = value.toUpperCase();
         try {
-            //Meets requirement for Lesson 10 Team - Convert string
-            int itemAt = Integer.parseInt(value);
-
-            // Casting to convert an object into an item
-            Item toUse = (Item) Game.me.getBag().getItemAt(itemAt);
-
-            if (itemAt >= 0 && itemAt < Game.me.getBag().balanceOfItems()) {
-                Game.me.getBag().useItem(toUse);
-            }
+            GameControl.useItem(value);
+        }catch (MyOtherException er) {
+            System.err.println("My Other Error: " + er.getMessage());
         } catch (NumberFormatException er){
             System.err.println("Error: Invalid entry. Please enter a number.");
         } catch (Exception er) {

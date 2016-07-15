@@ -7,6 +7,7 @@ package byui.cit260.andresIsland.control;
 
 import andresisland.AndresIsland;
 import byui.cit260.andresIsland.exceptions.MyExceptions;
+import byui.cit260.andresIsland.exceptions.MyOtherException;
 import byui.cit260.andresIsland.model.Game;
 import byui.cit260.andresIsland.model.Item;
 import byui.cit260.andresIsland.model.Move;
@@ -24,6 +25,21 @@ public class GameControl {
     public static void createNewGame(){
         
     }
+    
+    public static void useItem(String value) throws MyOtherException {
+
+    //Meets requirement for Lesson 10 Team - Convert string
+        int itemAt = Integer.parseInt(value);
+        if (itemAt < 0) throw new MyOtherException();
+        // Casting to convert an object into an item
+        Item toUse = (Item) Game.me.getBag().getItemAt(itemAt);
+
+        if (itemAt >= 0 && itemAt < Game.me.getBag().balanceOfItems()) {
+            Game.me.getBag().useItem(toUse);
+        }
+    }
+    
+    
     //Meets requirement for Lesson 10 Team - 'Catch the custom exception thrown...
     public static void moveOnMap() throws MyExceptions {
         if((Game.me.getCoordX() == 0 & Game.me.getDirection() == Move.WEST)
