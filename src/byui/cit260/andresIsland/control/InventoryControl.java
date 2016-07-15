@@ -13,23 +13,4 @@ import byui.cit260.andresIsland.model.Game;
  */
 public class InventoryControl {
 
-//    public static Item[] createInventoryList() {
-//        // created array of inventory
-//        Game.InventoryItem[] inventory
-//                = new Game.InventoryItem[13];
-
-//            Game.InventoryItem longLogs = new Game.InventoryItem();
-//            longLogs.setDescription("Long Logs");
-//            longLogs.setQuantityInStock(0);
-//            longLogs.setRequiredAmount(5);
-//            inventory[Item.longLogs.ordinal()] = longLogs;
-//            
-//            Game.InventoryItem shortLogs = new Game.InventoryItem();
-//            shortLogs.setDescription("Short Logs");
-//            shortLogs.setQuantityInStock(0);
-//            shortLogs.setRequiredAmount(3);
-//            inventory[Item.shortLogs.ordinal()] = shortLogs;
-//        return inventory;
-//    }
-
 }

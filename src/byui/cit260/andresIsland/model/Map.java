@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author andrenell
  */
 public class Map {
+    //Meets requirement Lesson 9 ArrayList
     private static Location [] [] map = null;
 
     public static Location[][] getMap() {

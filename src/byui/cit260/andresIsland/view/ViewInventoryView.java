@@ -52,9 +52,11 @@ public class ViewInventoryView extends View {
     private void dropItem() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+    //Meets requirement for lesson 9 Ind 
     public void displayBag() {
         for (int i = 0; i < Game.me.getBag().balanceOfItems(); i++) {
+            //Neets requirement for Lesson 9 Individual - Get position of Index
+            //Meets requirement for Lesson 9 Individual - Call a function to display result
             System.out.println("" + i + " - " + Game.me.getBag().getItemAt(i));   
         }
     }

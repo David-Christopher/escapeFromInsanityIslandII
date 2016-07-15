@@ -17,7 +17,6 @@ public class Player implements Serializable{
     //class instance variables
     private static String playersName;
     private static Game game = null;
-//    private static GameCharacter gameCharacter = new GameCharacter();
 
     public Game getGame() {
         return game;
@@ -26,18 +25,8 @@ public class Player implements Serializable{
     public void setGame(Game game) {
         this.game = game;
     }
-
-//    public static GameCharacter getGameCharacter() {
-//        return gameCharacter;
-//    }
-//
-//    public void setGameCharacter(GameCharacter gameCharacter) {
-//        this.gameCharacter = gameCharacter;
-//    }
-//    
-//    
+   
     public Player() throws FileNotFoundException {
-//        gameCharacter = new GameCharacter();
         game = new Game();
     }
     

@@ -13,7 +13,7 @@ import byui.cit260.andresIsland.model.Item;
 import byui.cit260.andresIsland.model.Location;
 import byui.cit260.andresIsland.model.Map;
 import byui.cit260.andresIsland.model.Move;
-import byui.cit260.andresIsland.model.MyExceptions;
+import byui.cit260.andresIsland.exceptions.MyExceptions;
 
 /**
  *

@@ -21,6 +21,7 @@ public class ResourcesControl {
     public static Item findResource(int X, int Y) {
         Item result = null;
         System.out.print("Finding Resource: ["+X+","+Y+"]");
+        //Met the requirement for Lesson 9 Individual - For Each Loop
         for (Object object : Resources.getStuff()) {
             ItemOnMap toCheck = (ItemOnMap) (object);
             
