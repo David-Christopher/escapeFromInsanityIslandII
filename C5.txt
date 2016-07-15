@@ -1,0 +1,14 @@
+C5 With the tides, this looks
+like a good place to build and
+launch a raft. If you have all
+the required inventory items
+(Long Logs, Short Logs and
+Vine), you can construct your 
+raft and set sail into the sunset.
+If not, keep looking for what
+you need to escape the island.
+
+Do you construct a raft?
+
+Press Y to take.
+Press N to leave.

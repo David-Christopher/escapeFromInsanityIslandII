@@ -1,0 +1,9 @@
+A1 You wake up on an Island.
+You are not sure how you got
+there. Look around. You find
+oysters in a rock pool. 
+
+Do you pick them up to eat them?
+
+Press Y to take.
+Press N to leave.

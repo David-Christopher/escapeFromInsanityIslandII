@@ -1,0 +1,14 @@
+D4 You find an old map. It
+indicates that there is land
+to the south of the island. If
+you can build a raft, you
+could launch it from the south
+side of the island and the
+currents could take you in
+that direction. Rather try
+that than live here forever.
+
+Do you keep the map?
+
+Press Y to take.
+Press N to leave.

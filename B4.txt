@@ -1,0 +1,17 @@
+B4 You walk into the jungle.
+These logs look perfect for
+building a raft. If you have a
+saw, you can cut down the
+logs. The trees are shorter so
+you can only cut short
+sections. If you have a saw,
+you cut them down. If not,
+keep your eyes open for a saw.
+
+Do you cut a log?
+
+Press Y to take.
+Press N to leave.
+
+(You can return here to cut 
+down more logs if needed.)
