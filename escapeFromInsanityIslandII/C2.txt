@@ -1,0 +1,14 @@
+C2 The trees in this part of
+the jungle have long vines.
+These would be great for
+constructing a raft. If you
+have a knife, you can cut them
+down. 
+
+Do you cut down a vine?
+
+Press Y to take.
+Press N to leave.
+
+(You can return here to cut
+down more vines if required.)

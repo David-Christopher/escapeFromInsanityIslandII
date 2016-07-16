@@ -1,0 +1,9 @@
+B3 At the bottom of the lake
+something glistens. You dive
+down to see what it is. It is
+a spear. 
+
+Do you keep it? 
+
+Press Y to take.
+Press N to leave.

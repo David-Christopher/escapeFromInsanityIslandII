@@ -1,0 +1,9 @@
+A3 You find a primitive spear that
+may have been left there by a
+marauding tribe from a
+neighboring Island. 
+
+Do you keep it?
+
+Press Y to take.
+Press N to leave.

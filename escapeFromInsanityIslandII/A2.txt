@@ -1,0 +1,6 @@
+A2 You find an abandoned oar from
+a shipwrecked lifeboat. 
+Do you keep it? 
+
+Press Y to take.
+Press N to leave.

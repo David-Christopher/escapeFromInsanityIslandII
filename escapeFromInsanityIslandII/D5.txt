@@ -1,0 +1,9 @@
+D5 You find a rock-pool with
+fish in it. If you have your
+spear you spear fish to
+eat.
+
+Do you take the fish?
+
+Press Y to take.
+Press N to leave.

@@ -1,0 +1,14 @@
+D2 You climb the mountain
+At the top you find a
+cave. It seems to have been
+used as a lookout point be
+someone in the past. You also
+find tools from whoever was
+shipwrecked here before. There
+is a saw that you think would
+be useful. 
+
+Do you keep it?
+
+Press Y to take.
+Press N to leave.
